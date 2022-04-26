@@ -5,9 +5,17 @@
 /*!*******************************!*\
   !*** ./src/js/_components.js ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/sliders */ "./src/js/components/sliders.js");
+/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_sliders__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_progress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/progress */ "./src/js/components/progress.js");
+/* harmony import */ var _components_progress__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_progress__WEBPACK_IMPORTED_MODULE_1__);
 console.log('components');
+
+
 
 /***/ }),
 
@@ -119,6 +127,143 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/focus-visible.js */ "./src/js/vendor/focus-visible.js");
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__);
 
+
+/***/ }),
+
+/***/ "./src/js/components/progress.js":
+/*!***************************************!*\
+  !*** ./src/js/components/progress.js ***!
+  \***************************************/
+/***/ (() => {
+
+var circles = document.querySelectorAll('.facts-element__circle');
+circles.forEach(function (el) {
+  if (el.dataset.percentage == 'true') {
+    var progress = el.querySelector('.progress');
+    var valueBlock = el.querySelector('.facts-element__value');
+    var radius = progress.getAttribute('r');
+    var circleLength = 2 * Math.PI * radius;
+    var full = el.dataset.full;
+    var value = el.dataset.value;
+    var percentageProgress = Math.floor(value / full * 100); // valueBlock.textContent = value;
+
+    progress.setAttribute('stroke-dasharray', circleLength);
+    progress.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100);
+  } else {
+    var _progress = el.querySelector('.progress');
+
+    var _valueBlock = el.querySelector('.facts-element__value');
+
+    var _radius = _progress.getAttribute('r');
+
+    var _circleLength = 2 * Math.PI * _radius;
+
+    var percent = el.dataset.percent;
+
+    var _percentageProgress = Math.floor(percent);
+
+    _valueBlock.textContent = percent + '%';
+
+    _progress.setAttribute('stroke-dasharray', _circleLength);
+
+    _progress.setAttribute('stroke-dashoffset', _circleLength - _circleLength * _percentageProgress / 100);
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/components/sliders.js":
+/*!**************************************!*\
+  !*** ./src/js/components/sliders.js ***!
+  \**************************************/
+/***/ (() => {
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var root = document.querySelector(':root');
+var getRootStyles = getComputedStyle(root);
+var gap = parseInt(getRootStyles.getPropertyValue('--grid-gap'));
+var projSlider = document.querySelector('.projects-section__items');
+var projectsSlider = new Swiper(projSlider, {
+  slidesPerView: 3,
+  spaceBetween: gap,
+  // Ищем главный слайд, чтобы от него найти следующие слайды и нацепить на него класс для управления Opasity и visible.
+  on: {
+    init: function init() {
+      var activeSlide = projSlider.querySelector('.swiper-slide-active');
+      var nextActiveSlide = activeSlide.nextElementSibling;
+      var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
+      activeSlide.classList.add('slide-visible');
+      nextActiveSlide.classList.add('slide-visible');
+      nextNextActiveSlide.classList.add('slide-visible');
+    }
+  },
+  navigation: {
+    nextEl: '.projects-section__next',
+    prevEl: '.projects-section__prew'
+  }
+});
+document.querySelector('.projects-section__prew').addEventListener('click', function () {
+  var activeSlide = projSlider.querySelector('.swiper-slide-next');
+  document.querySelectorAll('.projects-section__items .swiper-slide').forEach(function (el) {
+    el.classList.remove('slide-visible');
+  });
+
+  if (activeSlide.previousElementSibling) {
+    var nextActiveSlide = activeSlide.previousElementSibling;
+    activeSlide.classList.add('slide-visible');
+    nextActiveSlide.classList.add('slide-visible');
+    activeSlide.nextElementSibling.classList.add('slide-visible');
+  }
+});
+document.querySelector('.projects-section__next').addEventListener('click', function () {
+  var activeSlide = projSlider.querySelector('.swiper-slide-active');
+  var nextActiveSlide = activeSlide.nextElementSibling;
+  var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
+  var colects = document.querySelectorAll('.projects-section__items .swiper-slide');
+
+  var _iterator = _createForOfIteratorHelper(colects),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var elem = _step.value;
+      elem.classList.remove('slide-visible');
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  activeSlide.classList.add('slide-visible');
+  nextActiveSlide.classList.add('slide-visible');
+  nextNextActiveSlide.classList.add('slide-visible');
+}); // testimonialsSlider
+
+var testimonialsSlider = new Swiper('.testimonials__items', {
+  slidesPerView: 1,
+  spaceBetween: gap,
+  loop: true,
+  on: {
+    init: function init() {
+      var activeSlide = projSlider.querySelector('.swiper-slide-active');
+      var nextActiveSlide = activeSlide.nextElementSibling;
+      var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
+      activeSlide.classList.add('slide-visible');
+      nextActiveSlide.classList.add('slide-visible');
+      nextNextActiveSlide.classList.add('slide-visible');
+    }
+  },
+  navigation: {
+    nextEl: '.testimonials__next',
+    prevEl: '.testimonials__prew'
+  }
+});
 
 /***/ }),
 
@@ -545,7 +690,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_vars */ "./src/js/_vars.js");
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_functions */ "./src/js/_functions.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
