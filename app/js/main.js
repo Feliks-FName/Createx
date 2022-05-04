@@ -145,8 +145,8 @@ circles.forEach(function (el) {
     var circleLength = 2 * Math.PI * radius;
     var full = el.dataset.full;
     var value = el.dataset.value;
-    var percentageProgress = Math.floor(value / full * 100); // valueBlock.textContent = value;
-
+    var percentageProgress = Math.floor(value / full * 100);
+    valueBlock.textContent = value;
     progress.setAttribute('stroke-dasharray', circleLength);
     progress.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100);
   } else {
