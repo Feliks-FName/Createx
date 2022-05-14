@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -16,9 +15,9 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
-<body class="page__body">
+  <body class="page__body">
     <div class="site-container">
-        <header class="header header--secondary">
+      <header class="header header--secondary">
   <div class="container header__container">
     <a class="logo" href="../index.html">
       <img src="../img/logo.svg" alt="Createx Logo" />
@@ -64,8 +63,8 @@
   </div>
 </header>
 
-        <main class="main">
-            <section class="page-hero page-hero--services">
+      <main class="main">
+        <section class="page-hero page-hero--work">
   <div class="container">
     <ul class="list-reset breadcrumbs page-hero__breadcrumbs">
       <li class="breadcrumbs__item">
@@ -76,84 +75,204 @@
       </li>
     </ul>
 
-    <h1 class="page-hero__title">Services</h1>
+    <h1 class="page-hero__title">Our work</h1>
     <p class="page-hero__descr">
-      If you are looking for a full-service construction company, look
-      to Createx Construction Bureau. We are doing our best
-      to be a partner for all of your construction needs.
+      Our portfolio represents 20 years of construction experience
+      backed by a passion for perfect client service, quality and
+      innovations in consctuction industry.
     </p>
   </div>
 </section>
 
-            <section class="services">
+        <section class="work-services">
+  <div class="container">
+    <ul class="list-reset work-services-list work-services__list">
+      <li class="work-services-list__item">
+        <a href="#" class="work-services-item">
+          <div class="work-services-item__content">
+            <svg class="work-services-item__icon" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#house"></use>
+            </svg>
+            <h3 class="work-services-item__title">All Projects</h3>
+          </div>
+        </a>
+      </li>
+      <li class="work-services-list__item">
+        <a href="#" class="work-services-item">
+          <div class="work-services-item__content">
+            <svg class="work-services-item__icon" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#services-1"></use>
+            </svg>
+            <h3 class="work-services-item__title">Construction</h3>
+          </div>
+        </a>
+      </li>
+      <li class="work-services-list__item">
+        <a href="#" class="work-services-item">
+          <div class="work-services-item__content">
+            <svg class="work-services-item__icon" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#services-2"></use>
+            </svg>
+            <h3 class="work-services-item__title">Project Development</h3>
+          </div>
+        </a>
+      </li>
+      <li class="work-services-list__item">
+        <a href="#" class="work-services-item">
+          <div class="work-services-item__content">
+            <svg class="work-services-item__icon" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#services-3"></use>
+            </svg>
+            <h3 class="work-services-item__title">Interior Design</h3>
+          </div>
+        </a>
+      </li>
+      <li class="work-services-list__item">
+        <a href="#" class="work-services-item">
+          <div class="work-services-item__content">
+            <svg class="work-services-item__icon" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#services-4"></use>
+            </svg>
+            <h3 class="work-services-item__title">Repairs</h3>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <img src="./img/bg-image-page-servies.png" alt="image right center" aria-hidden="true" class="services-decorate-1">
-    <img src="./img/bg-image-page-services-bottom.png" alt="image left bottom" class="services-decorate-2" aria-hidden="true">
+        <section class="testimonials">
+    <div class="container testimonials__container">
+        <div class="testimonials__content">
+            <h2 class="title testimonials__title">What our clients are saying</h2>
 
-    <div class="container">
-        <h2 class="visually-hidden">Servisec content</h2>
+            <!-- swiper -->
+            <div class="swiper testimonials__items swiper-no-swiping">
 
-        <ul class="list-reset services__list">
-            <li class="services__item grid">
+                <div class=" swiper-wrapper ">
+                    <div class="swiper-slide">
 
-                <div class="services__image">
-                <img src="./img/page-servises-1.jpg" alt="image 1">
+                        <div class="testimonials-item">
+                            <div class="testimonials-item__image">
+                                <img src="img/testimonials-author.png" alt="Human 1">
+                            </div>
+                            <p class="testimonials-item__descr">Ipsum aute sunt aliquip aute et occaecat. Anim
+                                minim do cillum eiusmod enim. Consectetur magna cillum
+                                consequat minim laboris cillum laboris voluptate minim proident exercitation ullamco.
+                            </p>
+
+                            <span class="testimonials-item__author">Shawn Edwards</span>
+                            <span class="testimonials-item__author-positions">Position, Company name</span>
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide testimonials__overflow">
+
+                        <div class="testimonials-item">
+                            <div class="testimonials-item__image">
+                                <img src="img/testimonials-author.png" alt="Human 1">
+                            </div>
+                            <p class="testimonials-item__descr">Ipsum aute sunt aliquip aute et occaecat. Anim
+                                minim do cillum eiusmod enim. Consectetur magna cillum
+                                consequat minim laboris cillum laboris voluptate minim proident exercitation ullamco.
+                            </p>
+
+                            <span class="testimonials-item__author">Shawn Edwards</span>
+                            <span class="testimonials-item__author-positions">Position, Company name</span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="slider-nav testimonials__slider-nav">
+                    <button class="btn-reset slider-nav__btn testimonials__prew slider-btn">
+                        <svg class="slider-nav__icon">
+                            <use xlink:href="img/sprite.svg#Left-arrow"></use>
+                        </svg>
+                    </button>
+                    <button class="btn-reset slider-nav__btn testimonials__next slider-btn">
+                        <svg class="slider-nav__icon">
+                            <use xlink:href="img/sprite.svg#Right-arrow"></use>
+                        </svg>
+                    </button>
                 </div>
 
-                <div class="services__info">
-                    <h2 class="services__title">Construction</h2>
-                    <p class="services__descr">Sapien, feugiat faucibus orci arcu, vulputate. Tristique varius consectetur vulputate arcu, scelerisque nisi, nibh. Enim semper id sodales ultricies sed ut ut augue. Mattis habitant venenatis, gravida posuere massa ac interdum. Eget aliquam dignissim ut vestibulum.
-                    </p>
-                    <a href="../services-v2.html" class="services__link  btn btn--stroke btn--stroke-primary">Learn more</a>
-                </div>
-            </li>
-            <li class="services__item services__item--reverse grid">
-
-                <div class="services__image">
-                <img src="./img/page-services-2.jpg" alt="image 2">
-                </div>
-
-                <div class="services__info">
-                    <h2 class="services__title">Project Development</h2>
-                    <p class="services__descr">
-                        Volutpat tellus mauris sit sit. Posuere ut sit vestibulum amet viverra in. Est nulla lectus purus tincidunt massa tortor. Hendrerit vulputate elementum blandit massa vitae amet felis eget.
-                    </p>
-                    <a href="../services-v2.html" class="services__link  btn btn--stroke btn--stroke-primary">Learn more</a>
-                </div>
-            </li>
-            <li class="services__item grid">
-
-                <div class="services__image">
-                <img src="./img/page-services-3.jpg" alt="image 3">
-                </div>
-
-                <div class="services__info">
-                    <h2 class="services__title">Interior Design</h2>
-                    <p class="services__descr">
-                        Eleifend orci massa et facilisis orci feugiat ac. Congue in ut lacus, turpis accumsan gravida. Aliquet mattis dignissim massa sociis a, id bibendum. Egestas lorem eros, mi cras amet, vel eget molestie. Turpis enim arcu, amet donec massa pellentesque nulla duis. Arcu dictum metus sed purus senectus faucibus eget elementum pretium.
-                    </p>
-                    <a href="../services-v2.html" class="services__link  btn btn--stroke btn--stroke-primary">Learn more</a>
-                </div>
-            </li>
-                <li class="services__item services__item--reverse grid">
-
-                <div class="services__image">
-                <img src="./img/page-services-4.jpg" alt="image 4">
-                </div>
-
-                <div class="services__info">
-                    <h2 class="services__title">Repairs</h2>
-                    <p class="services__descr">
-                        Facilisis cursus feugiat sit pulvinar amet. Ac facilisi dictum commodo, tortor gravida pretium, orci. Nunc sit sollicitudin id egestas mattis. Turpis viverra nec urna ultrices urna.
-                    </p>
-                    <a href="../services-v2.html" class="services__link  btn btn--stroke btn--stroke-primary">Learn more</a>
-                </div>
-            </li>
-        </ul>
+            </div>
+            <!-- /swiper -->
+        </div>
+        <!-- /testimonials__content -->
+        <div class="testimonials__image">
+            <img src="img/testimonials-image-right.jpg" alt="" aria-hidden="true">
+        </div>
 
     </div>
 </section>
-            <section class="contacts-section">
+        <section class="partners partners--services">
+  <div class="container">
+    <h2 class="title title--centr partners__title">
+      Supported by 12+ partners
+    </h2>
+
+    <ul class="list-reset partners__list">
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img
+            src="img/partners/partners-logo-1.png"
+            class="partners__logo"
+            alt="logo partners 1"
+          />
+        </a>
+      </li>
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img
+            src="img/partners/partners-logo-2.png"
+            class="partners__logo"
+            alt="logo partners 2"
+          />
+        </a>
+      </li>
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img
+            src="img/partners/partners-logo-3.png"
+            class="partners__logo"
+            alt="logo partners 3"
+          />
+        </a>
+      </li>
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img
+            src="img/partners/partners-logo-4.png"
+            class="partners__logo"
+            alt="logo partners 4"
+          />
+        </a>
+      </li>
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img
+            src="img/partners/partners-logo-5.png"
+            class="partners__logo"
+            alt="logo partners 5"
+          />
+        </a>
+      </li>
+      <li class="partners__item">
+        <a href="#" class="partners__link">
+          <img
+            src="img/partners/partners-logo-6.png"
+            class="partners__logo"
+            alt="logo partners 6"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+        <section class="contacts-section">
   <h2 class="visually-hidden">Contacts</h2>
   <div class="container contacts-section__container">
     <form class="contacts-section__form contacts-form">
@@ -216,8 +335,8 @@
   </div>
 </section>
 
-        </main>
-        <footer class="footer">
+      </main>
+      <footer class="footer">
   <div class="container footer__container grid">
     <div class="footer__left">
       <div class="footer__top">
@@ -379,6 +498,5 @@
 </footer>
 
     </div>
-</body>
-
+  </body>
 </html>

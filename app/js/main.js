@@ -124,8 +124,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/focus-visible.js */ "./src/js/vendor/focus-visible.js");
-/* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _vendor_focus_visible__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/focus-visible */ "./src/js/vendor/focus-visible.js");
+/* harmony import */ var _vendor_focus_visible__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_visible__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _vendor_graph_accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vendor/graph-accordion */ "./src/js/vendor/graph-accordion.js");
+/* harmony import */ var _vendor_graph_accordion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vendor_graph_accordion__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 /***/ }),
@@ -184,86 +187,105 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var root = document.querySelector(':root');
+var root = document.querySelector(":root");
 var getRootStyles = getComputedStyle(root);
-var gap = parseInt(getRootStyles.getPropertyValue('--grid-gap'));
-var projSlider = document.querySelector('.projects-section__items');
-var projectsSlider = new Swiper(projSlider, {
-  slidesPerView: 3,
-  spaceBetween: gap,
-  // Ищем главный слайд, чтобы от него найти следующие слайды и нацепить на него класс для управления Opasity и visible.
-  on: {
-    init: function init() {
-      var activeSlide = projSlider.querySelector('.swiper-slide-active');
-      var nextActiveSlide = activeSlide.nextElementSibling;
-      var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
-      activeSlide.classList.add('slide-visible');
-      nextActiveSlide.classList.add('slide-visible');
-      nextNextActiveSlide.classList.add('slide-visible');
+var gap = parseInt(getRootStyles.getPropertyValue("--grid-gap"));
+var projSlider = document.querySelector(".projects-section__items");
+
+if (projSlider) {
+  var projectsSlider = new Swiper(projSlider, {
+    slidesPerView: 3,
+    spaceBetween: gap,
+    // Ищем главный слайд, чтобы от него найти следующие слайды и нацепить на него класс для управления Opasity и visible.
+    on: {
+      init: function init() {
+        var activeSlide = projSlider.querySelector(".swiper-slide-active");
+        var nextActiveSlide = activeSlide.nextElementSibling;
+        var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
+        activeSlide.classList.add("slide-visible");
+        nextActiveSlide.classList.add("slide-visible");
+        nextNextActiveSlide.classList.add("slide-visible");
+      }
+    },
+    navigation: {
+      nextEl: ".projects-section__next",
+      prevEl: ".projects-section__prew"
     }
-  },
-  navigation: {
-    nextEl: '.projects-section__next',
-    prevEl: '.projects-section__prew'
-  }
-});
-document.querySelector('.projects-section__prew').addEventListener('click', function () {
-  var activeSlide = projSlider.querySelector('.swiper-slide-next');
-  document.querySelectorAll('.projects-section__items .swiper-slide').forEach(function (el) {
-    el.classList.remove('slide-visible');
   });
+  document.querySelector(".projects-section__prew").addEventListener("click", function () {
+    var activeSlide = projSlider.querySelector(".swiper-slide-next");
+    document.querySelectorAll(".projects-section__items .swiper-slide").forEach(function (el) {
+      el.classList.remove("slide-visible");
+    });
 
-  if (activeSlide.previousElementSibling) {
-    var nextActiveSlide = activeSlide.previousElementSibling;
-    activeSlide.classList.add('slide-visible');
-    nextActiveSlide.classList.add('slide-visible');
-    activeSlide.nextElementSibling.classList.add('slide-visible');
-  }
-});
-document.querySelector('.projects-section__next').addEventListener('click', function () {
-  var activeSlide = projSlider.querySelector('.swiper-slide-active');
-  var nextActiveSlide = activeSlide.nextElementSibling;
-  var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
-  var colects = document.querySelectorAll('.projects-section__items .swiper-slide');
-
-  var _iterator = _createForOfIteratorHelper(colects),
-      _step;
-
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var elem = _step.value;
-      elem.classList.remove('slide-visible');
+    if (activeSlide.previousElementSibling) {
+      var nextActiveSlide = activeSlide.previousElementSibling;
+      activeSlide.classList.add("slide-visible");
+      nextActiveSlide.classList.add("slide-visible");
+      activeSlide.nextElementSibling.classList.add("slide-visible");
     }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
-  }
+  });
+  document.querySelector(".projects-section__next").addEventListener("click", function () {
+    var activeSlide = projSlider.querySelector(".swiper-slide-active");
+    var nextActiveSlide = activeSlide.nextElementSibling;
+    var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
+    var colects = document.querySelectorAll(".projects-section__items .swiper-slide");
 
-  activeSlide.classList.add('slide-visible');
-  nextActiveSlide.classList.add('slide-visible');
-  nextNextActiveSlide.classList.add('slide-visible');
-}); // testimonialsSlider
+    var _iterator = _createForOfIteratorHelper(colects),
+        _step;
 
-var testimonialsSlider = new Swiper('.testimonials__items', {
-  slidesPerView: 1,
-  spaceBetween: gap,
-  loop: true,
-  on: {
-    init: function init() {
-      var activeSlide = projSlider.querySelector('.swiper-slide-active');
-      var nextActiveSlide = activeSlide.nextElementSibling;
-      var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
-      activeSlide.classList.add('slide-visible');
-      nextActiveSlide.classList.add('slide-visible');
-      nextNextActiveSlide.classList.add('slide-visible');
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var elem = _step.value;
+        elem.classList.remove("slide-visible");
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
     }
-  },
-  navigation: {
-    nextEl: '.testimonials__next',
-    prevEl: '.testimonials__prew'
-  }
-});
+
+    activeSlide.classList.add("slide-visible");
+    nextActiveSlide.classList.add("slide-visible");
+    nextNextActiveSlide.classList.add("slide-visible");
+  });
+}
+/* 
+.
+.
+.
+.
+.
+.
+.
+.
+ */
+// testimonialsSlider
+
+
+var testimonSliders = document.querySelector(".testimonials__items");
+
+if (testimonSliders) {
+  var testimonialsSlider = new Swiper(".testimonials__items", {
+    slidesPerView: 1,
+    spaceBetween: gap,
+    loop: true,
+    on: {
+      init: function init() {
+        var activeSlide = testimonSliders.querySelector(".swiper-slide-active");
+        var nextActiveSlide = activeSlide.nextElementSibling;
+        var nextNextActiveSlide = nextActiveSlide.nextElementSibling;
+        activeSlide.classList.add("slide-visible");
+        nextActiveSlide.classList.add("slide-visible");
+        nextNextActiveSlide.classList.add("slide-visible");
+      }
+    },
+    navigation: {
+      nextEl: ".testimonials__next",
+      prevEl: ".testimonials__prew"
+    }
+  });
+}
 
 /***/ }),
 
@@ -606,6 +628,98 @@ if (typeof document !== 'undefined') {
   // Apply the polyfill to the global document, so that no JavaScript
   // coordination is required to use the polyfill in the top-level document:
   applyFocusVisiblePolyfill(document);
+}
+
+/***/ }),
+
+/***/ "./src/js/vendor/graph-accordion.js":
+/*!******************************************!*\
+  !*** ./src/js/vendor/graph-accordion.js ***!
+  \******************************************/
+/***/ (() => {
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var GraphAccordion = /*#__PURE__*/function () {
+  function GraphAccordion(selector, options) {
+    _classCallCheck(this, GraphAccordion);
+
+    var defaultOptions = {
+      isOpen: function isOpen() {},
+      isClose: function isClose() {},
+      speed: 300
+    };
+    this.options = Object.assign(defaultOptions, options);
+    this.accordion = document.querySelector(selector);
+    this.control = this.accordion.querySelector('.accordion__control');
+    this.content = this.accordion.querySelector('.accordion__content');
+    this.event();
+    this.start();
+  }
+
+  _createClass(GraphAccordion, [{
+    key: "start",
+    value: function start() {
+      if (this.accordion) {
+        if (this.accordion.classList.contains('is-open')) {
+          this.open();
+        }
+      }
+    }
+  }, {
+    key: "event",
+    value: function event() {
+      var _this = this;
+
+      console.log('event!');
+
+      if (this.accordion) {
+        this.accordion.addEventListener('click', function (e) {
+          _this.accordion.classList.toggle('open');
+
+          if (_this.accordion.classList.contains('open')) {
+            _this.open();
+          } else {
+            _this.close();
+          }
+        });
+      }
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      this.accordion.style.setProperty('--accordion-time', "".concat(this.options.speed / 1000, "s"));
+      this.accordion.classList.add('is-open');
+      this.control.setAttribute('aria-expanded', true);
+      this.content.setAttribute('aria-hidden', false);
+      this.content.style.maxHeight = this.content.scrollHeight + 'px';
+      this.options.isOpen(this);
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.accordion.classList.remove('is-open');
+      this.control.setAttribute('aria-expanded', false);
+      this.content.setAttribute('aria-hidden', true);
+      this.content.style.maxHeight = null;
+      this.options.isClose(this);
+    }
+  }]);
+
+  return GraphAccordion;
+}();
+
+if (document.querySelector('.we-offer')) {
+  var accordion1 = new GraphAccordion('.accordion-1', {
+    speed: 300
+  });
+  var accordion2 = new GraphAccordion('.accordion-2', {
+    speed: 300
+  });
 }
 
 /***/ })
