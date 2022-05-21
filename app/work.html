@@ -71,7 +71,7 @@
         <a href="./index.html" class="breadcrumbs__link">Homepage</a>
       </li>
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link">Services</a>
+        <a class="breadcrumbs__link">Work</a>
       </li>
     </ul>
 
@@ -83,135 +83,450 @@
     </p>
   </div>
 </section>
-
-        <section class="work-services">
+ <section class="portfolio">
   <div class="container">
-    <ul class="list-reset work-services-list work-services__list">
-      <li class="work-services-list__item">
-        <a href="#" class="work-services-item">
-          <div class="work-services-item__content">
-            <svg class="work-services-item__icon" aria-hidden="true">
-              <use xlink:href="img/sprite.svg#house"></use>
-            </svg>
-            <h3 class="work-services-item__title">All Projects</h3>
+    <h2 class="visually-hidden">Portfolio</h2>
+    <ul class="list-reset portfolio-tabs-nav">
+      <li class="portfolio-tabs-nav__item">
+        <button
+          class="btn-reset portfolio-tabs-nav__btn portfolio-tabs-nav__btn--active"
+          data-path="all"
+        >
+          <svg class="portfolio-tabs-nav__icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#house"></use>
+          </svg>
+          <span class="portfolio-tabs-nav__text">All projects</span>
+        </button>
+      </li>
+      <li class="portfolio-tabs-nav__item">
+        <button class="btn-reset portfolio-tabs-nav__btn" data-path="constr">
+          <svg class="portfolio-tabs-nav__icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#services-1"></use>
+          </svg>
+          <span class="portfolio-tabs-nav__text">Construction</span>
+        </button>
+      </li>
+      <li class="portfolio-tabs-nav__item">
+        <button class="btn-reset portfolio-tabs-nav__btn" data-path="dev">
+          <svg class="portfolio-tabs-nav__icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#services-2"></use>
+          </svg>
+          <span class="portfolio-tabs-nav__text">Project Development</span>
+        </button>
+      </li>
+      <li class="portfolio-tabs-nav__item">
+        <button class="btn-reset portfolio-tabs-nav__btn" data-path="design">
+          <svg class="portfolio-tabs-nav__icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#services-3"></use>
+          </svg>
+          <span class="portfolio-tabs-nav__text">Interior Design</span>
+        </button>
+      </li>
+      <li class="portfolio-tabs-nav__item">
+        <button class="btn-reset portfolio-tabs-nav__btn" data-path="repair">
+          <svg class="portfolio-tabs-nav__icon" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#services-4"></use>
+          </svg>
+          <span class="portfolio-tabs-nav__text">Repairs</span>
+        </button>
+      </li>
+    </ul>
+    <!-- //portfolio-tabs-nav -->
+
+    <ul class="list-reset portfolio-tabs grid">
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-1.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Cubes Building</h3>
+            <p class="projects-item__descr">Business Centers</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
           </div>
         </a>
       </li>
-      <li class="work-services-list__item">
-        <a href="#" class="work-services-item">
-          <div class="work-services-item__content">
-            <svg class="work-services-item__icon" aria-hidden="true">
-              <use xlink:href="img/sprite.svg#services-1"></use>
-            </svg>
-            <h3 class="work-services-item__title">Construction</h3>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="repair">
+          <img
+            src="./img/work/portfolio-tabs-2.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Modern Cottage</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
           </div>
         </a>
       </li>
-      <li class="work-services-list__item">
-        <a href="#" class="work-services-item">
-          <div class="work-services-item__content">
-            <svg class="work-services-item__icon" aria-hidden="true">
-              <use xlink:href="img/sprite.svg#services-2"></use>
-            </svg>
-            <h3 class="work-services-item__title">Project Development</h3>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="design">
+          <img
+            src="./img/work/portfolio-tabs-3.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Luxury Beach House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
           </div>
         </a>
       </li>
-      <li class="work-services-list__item">
-        <a href="#" class="work-services-item">
-          <div class="work-services-item__content">
-            <svg class="work-services-item__icon" aria-hidden="true">
-              <use xlink:href="img/sprite.svg#services-3"></use>
-            </svg>
-            <h3 class="work-services-item__title">Interior Design</h3>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="constr">
+          <img
+            src="./img/work/portfolio-tabs-4.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Modern Double Bedroom</h3>
+            <p class="projects-item__descr">Apartments & flats</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
           </div>
         </a>
       </li>
-      <li class="work-services-list__item">
-        <a href="#" class="work-services-item">
-          <div class="work-services-item__content">
-            <svg class="work-services-item__icon" aria-hidden="true">
-              <use xlink:href="img/sprite.svg#services-4"></use>
-            </svg>
-            <h3 class="work-services-item__title">Repairs</h3>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-5.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Kids Bedroom With Decorations</h3>
+            <p class="projects-item__descr">Apartments & flats</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="repair">
+          <img
+            src="./img/work/portfolio-tabs-7.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">The Pencil Building</h3>
+            <p class="projects-item__descr">Stores & Malls</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="design">
+          <img
+            src="./img/work/portfolio-tabs-7.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Red Finger Building</h3>
+            <p class="projects-item__descr">Business Centers</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="constr">
+          <img
+            src="./img/work/portfolio-tabs-8.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Scandinavian Style Interior</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="portfolio-tabs__item portfolio-tabs__item--visible">
+        <a href="#" class="projects-item" data-target="dev">
+          <img
+            src="./img/work/portfolio-tabs-9.jpg"
+            alt="projecst cover"
+            class="projects-item__image"
+          />
+          <div class="projects-item__content">
+            <h3 class="projects-item__title">Brown and Gray Painted House</h3>
+            <p class="projects-item__descr">Private houses</p>
+            <div class="projects-item__btn btn btn--stroke btn--stroke-primary">
+              View Project
+            </div>
           </div>
         </a>
       </li>
     </ul>
+
+    <div class="centered">
+      <button type="button" class="btn-reset load-more__btn">
+        <svg class="load-more__icon" aria-hidden="true">
+          <use xlink:href="img/sprite.svg#portfolio-сonvert"></use>
+        </svg>
+        Load more
+      </button>
+    </div>
+
+    </div>
   </div>
 </section>
 
-        <section class="testimonials">
-    <div class="container testimonials__container">
-        <div class="testimonials__content">
-            <h2 class="title testimonials__title">What our clients are saying</h2>
+        <section class="testimonials testimonials--work">
+  <div class="container testimonials__container">
+    <div class="testimonials__content">
+      <h2 class="title testimonials__title">What our clients are saying</h2>
 
-            <!-- swiper -->
-            <div class="swiper testimonials__items swiper-no-swiping">
+      <!-- swiper -->
+      <div class="swiper testimonials__items swiper-no-swiping">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonials-item">
+              <div class="testimonials-item__image">
+                <img src="img/testimonials-author.png" alt="Human 1" />
+              </div>
+              <p class="testimonials-item__descr">
+                Ipsum aute sunt aliquip aute et occaecat. Anim minim
+                do cillum eiusmod enim. Consectetur magna cillum consequat
+                minim laboris cillum laboris voluptate minim proident
+                exercitation ullamco.
+              </p>
 
-                <div class=" swiper-wrapper ">
-                    <div class="swiper-slide">
-
-                        <div class="testimonials-item">
-                            <div class="testimonials-item__image">
-                                <img src="img/testimonials-author.png" alt="Human 1">
-                            </div>
-                            <p class="testimonials-item__descr">Ipsum aute sunt aliquip aute et occaecat. Anim
-                                minim do cillum eiusmod enim. Consectetur magna cillum
-                                consequat minim laboris cillum laboris voluptate minim proident exercitation ullamco.
-                            </p>
-
-                            <span class="testimonials-item__author">Shawn Edwards</span>
-                            <span class="testimonials-item__author-positions">Position, Company name</span>
-                        </div>
-
-                    </div>
-                    <div class="swiper-slide testimonials__overflow">
-
-                        <div class="testimonials-item">
-                            <div class="testimonials-item__image">
-                                <img src="img/testimonials-author.png" alt="Human 1">
-                            </div>
-                            <p class="testimonials-item__descr">Ipsum aute sunt aliquip aute et occaecat. Anim
-                                minim do cillum eiusmod enim. Consectetur magna cillum
-                                consequat minim laboris cillum laboris voluptate minim proident exercitation ullamco.
-                            </p>
-
-                            <span class="testimonials-item__author">Shawn Edwards</span>
-                            <span class="testimonials-item__author-positions">Position, Company name</span>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="slider-nav testimonials__slider-nav">
-                    <button class="btn-reset slider-nav__btn testimonials__prew slider-btn">
-                        <svg class="slider-nav__icon">
-                            <use xlink:href="img/sprite.svg#Left-arrow"></use>
-                        </svg>
-                    </button>
-                    <button class="btn-reset slider-nav__btn testimonials__next slider-btn">
-                        <svg class="slider-nav__icon">
-                            <use xlink:href="img/sprite.svg#Right-arrow"></use>
-                        </svg>
-                    </button>
-                </div>
-
+              <span class="testimonials-item__author">Shawn Edwards</span>
+              <span class="testimonials-item__author-positions"
+                >Position, Company name</span
+              >
             </div>
-            <!-- /swiper -->
-        </div>
-        <!-- /testimonials__content -->
-        <div class="testimonials__image">
-            <img src="img/testimonials-image-right.jpg" alt="" aria-hidden="true">
-        </div>
+          </div>
+          <div class="swiper-slide testimonials__overflow">
+            <div class="testimonials-item">
+              <div class="testimonials-item__image">
+                <img src="img/testimonials-author.png" alt="Human 1" />
+              </div>
+              <p class="testimonials-item__descr">
+                Ipsum aute sunt aliquip aute et occaecat. Anim minim
+                do cillum eiusmod enim. Consectetur magna cillum consequat
+                minim laboris cillum laboris voluptate minim proident
+                exercitation ullamco.
+              </p>
 
+              <span class="testimonials-item__author">Shawn Edwards</span>
+              <span class="testimonials-item__author-positions"
+                >Position, Company name</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="slider-nav testimonials__slider-nav">
+          <button
+            class="btn-reset slider-nav__btn testimonials__prew slider-btn"
+          >
+            <svg class="slider-nav__icon">
+              <use xlink:href="img/sprite.svg#Left-arrow"></use>
+            </svg>
+          </button>
+          <button
+            class="btn-reset slider-nav__btn testimonials__next slider-btn"
+          >
+            <svg class="slider-nav__icon">
+              <use xlink:href="img/sprite.svg#Right-arrow"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- /swiper -->
     </div>
+    <!-- /testimonials__content -->
+    <div class="testimonials__image">
+      <img src="img/testimonials-image-right.jpg" alt="" aria-hidden="true" />
+    </div>
+  </div>
 </section>
-        <section class="partners partners--services">
+
+        <section class="partners partners--work">
   <div class="container">
-    <h2 class="title title--centr partners__title">
-      Supported by 12+ partners
-    </h2>
+    <h2 class="title title--centr partners__title">Our clients</h2>
 
     <ul class="list-reset partners__list">
       <li class="partners__item">
