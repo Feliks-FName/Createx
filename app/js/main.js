@@ -147,91 +147,94 @@ var portfolioTabsNavBtns = document.querySelectorAll(".portfolio-tabs-nav__btn")
 var portfolioTabsItems = document.querySelectorAll(".portfolio-tabs__item");
 var portfolioTabsItemsVisible = document.querySelectorAll(".portfolio-tabs__item--visible");
 var loadMoreBtn = document.querySelector(".load-more__btn");
-var maxItems = 9; // показать или скрыть кнопку
+var maxItems = 9;
 
-var isLoadMoreNeeded = function isLoadMoreNeeded(selector) {
-  if (selector.length <= maxItems) {
-    loadMoreBtn.style.display = "none";
-  } else {
-    loadMoreBtn.style.display = "inline-flex";
-  }
-}; // Показывает необходимое кол-во элементов в зависимости от условия
-
-
-var hideMoreItems = function hideMoreItems(selector) {
-  if (selector.length > maxItems) {
-    // Создаем массив, зависящий от переданной переменной в функцию
-    var arr = Array.from(selector); // Вырезаем из массива все элементы после 9
-
-    var hiddenItems = arr.slice(maxItems, selector.length); // Теперь удаляем им классы, чтобы они скрылись
-
-    hiddenItems.forEach(function (el) {
-      el.classList.remove("portfolio-tabs__item--visible");
-      el.classList.remove("portfolio-tabs__item--visible-more");
-    });
-  }
-}; // При загрузке стрнаицы скрываем все элементы, которых более 9
+if (portfolioTabsNav) {
+  // показать или скрыть кнопку
+  var isLoadMoreNeeded = function isLoadMoreNeeded(selector) {
+    if (selector.length <= maxItems) {
+      loadMoreBtn.style.display = "none";
+    } else {
+      loadMoreBtn.style.display = "inline-flex";
+    }
+  }; // Показывает необходимое кол-во элементов в зависимости от условия
 
 
-hideMoreItems(portfolioTabsItems); // Кнопки навигации
+  var hideMoreItems = function hideMoreItems(selector) {
+    if (selector.length > maxItems) {
+      // Создаем массив, зависящий от переданной переменной в функцию
+      var arr = Array.from(selector); // Вырезаем из массива все элементы после 9
 
-portfolioTabsNav.addEventListener("click", function (e) {
-  var target = e.target;
+      var hiddenItems = arr.slice(maxItems, selector.length); // Теперь удаляем им классы, чтобы они скрылись
 
-  if (target.classList.contains("portfolio-tabs-nav__btn")) {
-    var path = target.dataset.path; // подсвечиваем кнопку
-
-    portfolioTabsNavBtns.forEach(function (el) {
-      el.classList.remove("portfolio-tabs-nav__btn--active");
-      target.classList.add("portfolio-tabs-nav__btn--active");
-    }); // Очищаем от классов
-
-    portfolioTabsItems.forEach(function (el) {
-      el.classList.remove("portfolio-tabs__item--visible");
-      el.classList.remove("portfolio-tabs__item--visible-more");
-    }); // Добавляем НУЖНЫМ элементам классы, чтобы они показались
-
-    document.querySelectorAll("[data-target=\"".concat(path, "\"]")).forEach(function (el) {
-      el.closest(".portfolio-tabs__item").classList.add("portfolio-tabs__item--visible");
-    }); // Если элементов <=9, то убираем кнопку показать еще
-
-    isLoadMoreNeeded(document.querySelectorAll("[data-target=\"".concat(path, "\"]"))); // делаем так чтобы элементов до нажатия кнопки было не более 9. Описание ф-ии смотри выше
-
-    hideMoreItems(document.querySelectorAll(".portfolio-tabs__item--visible")); // При нажатии на кнопку все элементы
-
-    if (path == "all") {
-      // перебираем все элементы и добавляем им нужный класс, чтобы показать их все при нажатии
-      portfolioTabsItems.forEach(function (el) {
-        el.classList.add("portfolio-tabs__item--visible"); // Контолируем. Показывать или скрыть кнопку
-
-        isLoadMoreNeeded(document.querySelectorAll(".portfolio-tabs__item--visible")); // Контролируем сколько элементов показать
-
-        hideMoreItems(document.querySelectorAll(".portfolio-tabs__item--visible"));
+      hiddenItems.forEach(function (el) {
+        el.classList.remove("portfolio-tabs__item--visible");
+        el.classList.remove("portfolio-tabs__item--visible-more");
       });
     }
-  }
-}); // Кнопка показать еще
+  }; // При загрузке стрнаицы скрываем все элементы, которых более 9
 
-loadMoreBtn.addEventListener("click", function (e) {
-  // Показывает data-attr подсвеченой кнопки
-  var path = document.querySelector(".portfolio-tabs-nav__btn--active").dataset.path; // Случай для всех элементов
 
-  if (path == "all") {
-    // Перебираем все элементы и добавляем им класс, который заставит всех показаться)
-    portfolioTabsItems.forEach(function (el) {
-      el.classList.add("portfolio-tabs__item--visible-more"); // Скрываем кнопку показать еще
+  hideMoreItems(portfolioTabsItems); // Кнопки навигации
+
+  portfolioTabsNav.addEventListener("click", function (e) {
+    var target = e.target;
+
+    if (target.classList.contains("portfolio-tabs-nav__btn")) {
+      var path = target.dataset.path; // подсвечиваем кнопку
+
+      portfolioTabsNavBtns.forEach(function (el) {
+        el.classList.remove("portfolio-tabs-nav__btn--active");
+        target.classList.add("portfolio-tabs-nav__btn--active");
+      }); // Очищаем от классов
+
+      portfolioTabsItems.forEach(function (el) {
+        el.classList.remove("portfolio-tabs__item--visible");
+        el.classList.remove("portfolio-tabs__item--visible-more");
+      }); // Добавляем НУЖНЫМ элементам классы, чтобы они показались
+
+      document.querySelectorAll("[data-target=\"".concat(path, "\"]")).forEach(function (el) {
+        el.closest(".portfolio-tabs__item").classList.add("portfolio-tabs__item--visible");
+      }); // Если элементов <=9, то убираем кнопку показать еще
+
+      isLoadMoreNeeded(document.querySelectorAll("[data-target=\"".concat(path, "\"]"))); // делаем так чтобы элементов до нажатия кнопки было не более 9. Описание ф-ии смотри выше
+
+      hideMoreItems(document.querySelectorAll(".portfolio-tabs__item--visible")); // При нажатии на кнопку все элементы
+
+      if (path == "all") {
+        // перебираем все элементы и добавляем им нужный класс, чтобы показать их все при нажатии
+        portfolioTabsItems.forEach(function (el) {
+          el.classList.add("portfolio-tabs__item--visible"); // Контолируем. Показывать или скрыть кнопку
+
+          isLoadMoreNeeded(document.querySelectorAll(".portfolio-tabs__item--visible")); // Контролируем сколько элементов показать
+
+          hideMoreItems(document.querySelectorAll(".portfolio-tabs__item--visible"));
+        });
+      }
+    }
+  }); // Кнопка показать еще
+
+  loadMoreBtn.addEventListener("click", function (e) {
+    // Показывает data-attr подсвеченой кнопки
+    var path = document.querySelector(".portfolio-tabs-nav__btn--active").dataset.path; // Случай для всех элементов
+
+    if (path == "all") {
+      // Перебираем все элементы и добавляем им класс, который заставит всех показаться)
+      portfolioTabsItems.forEach(function (el) {
+        el.classList.add("portfolio-tabs__item--visible-more"); // Скрываем кнопку показать еще
+
+        loadMoreBtn.style.display = "none";
+      }); // Случай, когда выбираем каким элементам показаться
+    } else {
+      // Ищем элементы по data-attr, перебираем их, и присваиваем их родителю класс, который заставит показаться элементы по выбранному data-attr.
+      document.querySelectorAll("[data-target=\"".concat(path, "\"]")).forEach(function (el) {
+        el.closest(".portfolio-tabs__item").classList.add("portfolio-tabs__item--visible-more");
+      }); // Скрываем кнопку показать еще
 
       loadMoreBtn.style.display = "none";
-    }); // Случай, когда выбираем каким элементам показаться
-  } else {
-    // Ищем элементы по data-attr, перебираем их, и присваиваем их родителю класс, который заставит показаться элементы по выбранному data-attr.
-    document.querySelectorAll("[data-target=\"".concat(path, "\"]")).forEach(function (el) {
-      el.closest(".portfolio-tabs__item").classList.add("portfolio-tabs__item--visible-more");
-    }); // Скрываем кнопку показать еще
-
-    loadMoreBtn.style.display = "none";
-  }
-});
+    }
+  });
+}
 
 /***/ }),
 
@@ -386,6 +389,68 @@ if (testimonSliders) {
       nextEl: ".testimonials__next",
       prevEl: ".testimonials__prew"
     }
+  });
+} // Work-slider
+
+
+var workImages = document.querySelector(".work-images-slider");
+
+if (workImages) {
+  var workSlider = new Swiper(".work-images-nav", {
+    spaceBetween: 20,
+    slidesPerView: 10,
+    freeMode: true,
+    watchSlidesProgress: true
+  });
+  var workSliderNav = new Swiper(workImages, {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: ".work-images__next",
+      prevEl: ".work-images__prew"
+    },
+    thumbs: {
+      swiper: workSlider
+    }
+  });
+} // About slider
+
+
+var historySlider = document.querySelector(".history-slider");
+
+if (historySlider) {
+  var aboutSlider = new Swiper(historySlider, {
+    spaceBetween: 20,
+    slidesPerView: 1,
+    mousewheel: true,
+    navigation: {
+      nextEl: ".history__next",
+      prevEl: ".history__prew"
+    }
+  });
+  var historyBtns = document.querySelectorAll(".history-nav__btn");
+  historyBtns.forEach(function (el, index) {
+    el.setAttribute("data-index", index);
+    el.addEventListener("click", function (e) {
+      var indexs = e.currentTarget.dataset.index;
+      historyBtns.forEach(function (el) {
+        el.classList.remove("history-nav__btn--active");
+      });
+      e.currentTarget.classList.add("history-nav__btn--active");
+      aboutSlider.slideTo(indexs);
+    });
+  }); // Реакция кнопок на переключение слайдов стрелочками
+
+  aboutSlider.on("slideChange", function () {
+    historyBtns.forEach(function (el) {
+      el.classList.remove("history-nav__btn--active");
+      var indexBtn = el.dataset.index;
+
+      if (aboutSlider.realIndex == indexBtn) {
+        el.classList.add("history-nav__btn--active");
+      }
+    });
   });
 }
 
