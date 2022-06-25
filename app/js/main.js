@@ -17,7 +17,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_portfolio_tabs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_portfolio_tabs__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/select */ "./src/js/components/select.js");
 /* harmony import */ var _components_select__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_select__WEBPACK_IMPORTED_MODULE_3__);
-console.log("components");
+/* harmony import */ var _components_video__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/video */ "./src/js/components/video.js");
+/* harmony import */ var _components_video__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_video__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/map */ "./src/js/components/map.js");
+/* harmony import */ var _components_map__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_map__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_scroll_top__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/scroll-top */ "./src/js/components/scroll-top.js");
+/* harmony import */ var _components_scroll_top__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_scroll_top__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/modals */ "./src/js/components/modals.js");
+/* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_modals__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+
 
 
 
@@ -34,6 +45,7 @@ console.log("components");
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/mobile-check */ "./src/js/functions/mobile-check.js");
+/* harmony import */ var _functions_burger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/burger */ "./src/js/functions/burger.js");
 // Данный файл - лишь собрание подключений готовых компонентов.
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 // Определение операционной системы на мобильных
@@ -51,8 +63,8 @@ console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)
 // Фикс фулскрин-блоков
 // import './functions/fix-fullheight';
 // Реализация бургер-меню
-// import { burger } from './functions/burger';
-// Реализация остановки скролла (не забудьте вызвать функцию)
+
+ // Реализация остановки скролла (не забудьте вызвать функцию)
 // import { disableScroll } from './functions/disable-scroll';
 // Реализация включения скролла (не забудьте вызвать функцию)
 // import { enableScroll } from './functions/enable-scroll';
@@ -136,9 +148,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_graph_accordion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vendor_graph_accordion__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _vendor_choices_min__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./vendor/choices.min */ "./src/js/vendor/choices.min.js");
 /* harmony import */ var _vendor_choices_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_vendor_choices_min__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _vendor_smooth_scroll_min__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./vendor/smooth-scroll.min */ "./src/js/vendor/smooth-scroll.min.js");
+/* harmony import */ var _vendor_smooth_scroll_min__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_vendor_smooth_scroll_min__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _vendor_graph_modal_min__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./vendor/graph-modal.min */ "./src/js/vendor/graph-modal.min.js");
+/* harmony import */ var _vendor_graph_modal_min__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_vendor_graph_modal_min__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
+
+
+
+/***/ }),
+
+/***/ "./src/js/components/map.js":
+/*!**********************************!*\
+  !*** ./src/js/components/map.js ***!
+  \**********************************/
+/***/ (() => {
+
+var country = document.querySelectorAll(".country");
+
+if (document.querySelectorAll(".country").length) {
+  var canada = document.querySelector(".country__canada");
+  var popUp = document.querySelector(".worldwide-map__pop-up");
+  var attrOne = canada.getAttribute("data-country");
+  popUp.innerHTML = "We have partners in " + attrOne;
+  country.forEach(function (el) {
+    el.addEventListener("mouseover", function (e) {
+      canada.classList.remove("country__canada--active");
+      var atr = e.target.getAttribute("data-country");
+      popUp.innerHTML = "We have partners in " + atr;
+    });
+  });
+} // var myicon = document.getElementById("myicon");
+// var mypopup = document.getElementById("mypopup");
+// myicon.addEventListener("mouseover", showPopup);
+// myicon.addEventListener("mouseout", hidePopup);
+// function showPopup(evt) {
+//   var iconPos = myicon.getBoundingClientRect();
+//   mypopup.style.left = iconPos.right + 20 + "px";
+//   mypopup.style.top = window.scrollY + iconPos.top - 60 + "px";
+//   mypopup.style.display = "block";
+// }
+// function hidePopup(evt) {
+//   mypopup.style.display = "none";
+// }
+
+/***/ }),
+
+/***/ "./src/js/components/modals.js":
+/*!*************************************!*\
+  !*** ./src/js/components/modals.js ***!
+  \*************************************/
+/***/ (() => {
+
+var modal = new GraphModal();
 
 /***/ }),
 
@@ -286,6 +350,43 @@ circles.forEach(function (el) {
 
 /***/ }),
 
+/***/ "./src/js/components/scroll-top.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/scroll-top.js ***!
+  \*****************************************/
+/***/ (() => {
+
+var smoothLink = document.querySelector(".to-top");
+var headerHeight = document.querySelector(".header");
+smoothLink.addEventListener("click", function (e) {
+  e.preventDefault();
+  var id = smoothLink.getAttribute("href");
+  document.querySelector(id).scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+});
+
+if (document.querySelector(".hero")) {
+  showToTop(".hero", headerHeight.scrollHeight);
+} else {
+  showToTop(".page-hero", 0);
+}
+
+function showToTop(block, hightHeader) {
+  window.addEventListener("scroll", function () {
+    smoothLink.classList.remove("to-top--visible");
+    var hero = document.querySelector(block);
+    var top = window.scrollY;
+
+    if (top >= hero.scrollHeight + hightHeader) {
+      smoothLink.classList.add("to-top--visible");
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/components/select.js":
 /*!*************************************!*\
   !*** ./src/js/components/select.js ***!
@@ -322,7 +423,7 @@ var projSlider = document.querySelector(".projects-section__items");
 
 if (projSlider) {
   var projectsSlider = new Swiper(projSlider, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: gap,
     // Ищем главный слайд, чтобы от него найти следующие слайды и нацепить на него класс для управления Opasity и visible.
     on: {
@@ -338,6 +439,14 @@ if (projSlider) {
     navigation: {
       nextEl: ".projects-section__next",
       prevEl: ".projects-section__prew"
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      }
     }
   });
   document.querySelector(".projects-section__prew").addEventListener("click", function () {
@@ -476,8 +585,6 @@ document.body.style.setProperty("--hero-slider-speed", heroSliderSpeed + "ms"); 
 var heroSlider = document.querySelector(".hero-slider");
 
 if (heroSlider) {
-  console.log("hi");
-
   var _aboutSlider = new Swiper(heroSlider, {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -505,6 +612,170 @@ if (heroSlider) {
     }
   });
 }
+
+/***/ }),
+
+/***/ "./src/js/components/video.js":
+/*!************************************!*\
+  !*** ./src/js/components/video.js ***!
+  \************************************/
+/***/ (() => {
+
+var videoBlock = document.querySelector(".video-block");
+
+if (videoBlock) {
+  var video = videoBlock.querySelector("video");
+  var videoPlayBtn = videoBlock.querySelector(".video-block__play"); // videoPlayBtn.addEventListener("click", () => {
+  //   if (videoPlayBtn.classList.contains("video-block__play--played")) {
+  //     video.pause();
+  //     videoPlayBtn.classList.remove("video-block__play--played");
+  //   } else {
+  //     videoBlock.classList.add("video-block--played");
+  //     video.play();
+  //     video.controls = true;
+  //     videoPlayBtn.classList.add("video-block__play--played");
+  //   }
+  // });
+  // video.addEventListener("click", () => {
+  //   video.pause();
+  //   videoPlayBtn.classList.remove("video-block__play--played");
+  // });
+
+  videoPlayBtn.addEventListener("click", function () {
+    videoBlock.classList.add("video-block--played");
+    video.play();
+    video.autoplay = false;
+    video.loop = false;
+    video.controls = true;
+    videoPlayBtn.classList.add("video-block__play--played");
+  });
+
+  video.onpause = function () {
+    videoBlock.classList.remove("video-block--played");
+    video.controls = false;
+    videoPlayBtn.classList.remove("video-block__play--played");
+  };
+}
+
+/***/ }),
+
+/***/ "./src/js/functions/burger.js":
+/*!************************************!*\
+  !*** ./src/js/functions/burger.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_disable_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/disable-scroll */ "./src/js/functions/disable-scroll.js");
+/* harmony import */ var _functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/enable-scroll */ "./src/js/functions/enable-scroll.js");
+
+
+
+(function () {
+  var _document, _document2, _document3, _document4;
+
+  var burger = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector('[data-burger]');
+  var menu = (_document2 = document) === null || _document2 === void 0 ? void 0 : _document2.querySelector('[data-menu]');
+  var menuItems = (_document3 = document) === null || _document3 === void 0 ? void 0 : _document3.querySelectorAll('[data-menu-item]');
+  var overlay = (_document4 = document) === null || _document4 === void 0 ? void 0 : _document4.querySelector('[data-menu-overlay]');
+  burger === null || burger === void 0 ? void 0 : burger.addEventListener('click', function (e) {
+    burger === null || burger === void 0 ? void 0 : burger.classList.toggle('burger--active');
+    menu === null || menu === void 0 ? void 0 : menu.classList.toggle('menu--active');
+
+    if (menu !== null && menu !== void 0 && menu.classList.contains('menu--active')) {
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'true');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Закрыть меню');
+      (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_0__.disableScroll)();
+    } else {
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
+      (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
+    }
+  });
+  overlay === null || overlay === void 0 ? void 0 : overlay.addEventListener('click', function () {
+    burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+    burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
+    burger.classList.remove('burger--active');
+    menu.classList.remove('menu--active');
+    (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
+  });
+  menuItems === null || menuItems === void 0 ? void 0 : menuItems.forEach(function (el) {
+    el.addEventListener('click', function () {
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
+      burger.classList.remove('burger--active');
+      menu.classList.remove('menu--active');
+      (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
+    });
+  });
+})();
+
+/***/ }),
+
+/***/ "./src/js/functions/disable-scroll.js":
+/*!********************************************!*\
+  !*** ./src/js/functions/disable-scroll.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "disableScroll": () => (/* binding */ disableScroll)
+/* harmony export */ });
+/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
+
+var disableScroll = function disableScroll() {
+  var _document;
+
+  var fixBlocks = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.fixed-block');
+  var pagePosition = window.scrollY;
+  var paddingOffset = "".concat(window.innerWidth - _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.offsetWidth, "px");
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.style.scrollBehavior = 'none';
+  fixBlocks.forEach(function (el) {
+    el.style.paddingRight = paddingOffset;
+  });
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.style.paddingRight = paddingOffset;
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.classList.add('dis-scroll');
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.dataset.position = pagePosition;
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.style.top = "-".concat(pagePosition, "px");
+};
+
+/***/ }),
+
+/***/ "./src/js/functions/enable-scroll.js":
+/*!*******************************************!*\
+  !*** ./src/js/functions/enable-scroll.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "enableScroll": () => (/* binding */ enableScroll)
+/* harmony export */ });
+/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
+
+var enableScroll = function enableScroll() {
+  var _document;
+
+  var fixBlocks = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.fixed-block');
+  var body = document.body;
+  var pagePosition = parseInt(_vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.dataset.position, 10);
+  fixBlocks.forEach(function (el) {
+    el.style.paddingRight = '0px';
+  });
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.style.paddingRight = '0px';
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.style.top = 'auto';
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.classList.remove('dis-scroll');
+  window.scroll({
+    top: pagePosition,
+    left: 0
+  });
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.removeAttribute('data-position');
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.style.scrollBehavior = 'smooth';
+};
 
 /***/ }),
 
@@ -5211,6 +5482,215 @@ if (document.querySelector('.we-offer')) {
     speed: 300
   });
 }
+
+/***/ }),
+
+/***/ "./src/js/vendor/graph-modal.min.js":
+/*!******************************************!*\
+  !*** ./src/js/vendor/graph-modal.min.js ***!
+  \******************************************/
+/***/ (() => {
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+!function (t) {
+  var e = {};
+
+  function o(n) {
+    if (e[n]) return e[n].exports;
+    var i = e[n] = {
+      i: n,
+      l: !1,
+      exports: {}
+    };
+    return t[n].call(i.exports, i, i.exports, o), i.l = !0, i.exports;
+  }
+
+  o.m = t, o.c = e, o.d = function (t, e, n) {
+    o.o(t, e) || Object.defineProperty(t, e, {
+      enumerable: !0,
+      get: n
+    });
+  }, o.r = function (t) {
+    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, {
+      value: "Module"
+    }), Object.defineProperty(t, "__esModule", {
+      value: !0
+    });
+  }, o.t = function (t, e) {
+    if (1 & e && (t = o(t)), 8 & e) return t;
+    if (4 & e && "object" == _typeof(t) && t && t.__esModule) return t;
+    var n = Object.create(null);
+    if (o.r(n), Object.defineProperty(n, "default", {
+      enumerable: !0,
+      value: t
+    }), 2 & e && "string" != typeof t) for (var i in t) {
+      o.d(n, i, function (e) {
+        return t[e];
+      }.bind(null, i));
+    }
+    return n;
+  }, o.n = function (t) {
+    var e = t && t.__esModule ? function () {
+      return t.default;
+    } : function () {
+      return t;
+    };
+    return o.d(e, "a", e), e;
+  }, o.o = function (t, e) {
+    return Object.prototype.hasOwnProperty.call(t, e);
+  }, o.p = "", o(o.s = 1);
+}([function (t, e, o) {
+  "use strict";
+
+  o.d(e, "a", function () {
+    return n;
+  });
+
+  var n = /*#__PURE__*/function () {
+    function n(t) {
+      _classCallCheck(this, n);
+
+      this.options = Object.assign({
+        isOpen: function isOpen() {},
+        isClose: function isClose() {}
+      }, t), this.modal = document.querySelector(".graph-modal"), this.speed = 300, this.animation = "fade", this._reOpen = !1, this._nextContainer = !1, this.modalContainer = !1, this.isOpen = !1, this.previousActiveElement = !1, this._focusElements = ["a[href]", "input", "select", "textarea", "button", "iframe", "[contenteditable]", '[tabindex]:not([tabindex^="-"])'], this._fixBlocks = document.querySelectorAll(".fix-block"), this.events();
+    }
+
+    _createClass(n, [{
+      key: "events",
+      value: function events() {
+        this.modal && (document.addEventListener("click", function (t) {
+          var e = t.target.closest("[data-graph-path]");
+
+          if (e) {
+            var _t = e.dataset.graphPath,
+                _o = e.dataset.graphAnimation,
+                _n2 = e.dataset.graphSpeed;
+            return this.animation = _o || "fade", this.speed = _n2 ? parseInt(_n2) : 300, this._nextContainer = document.querySelector("[data-graph-target=\"".concat(_t, "\"]")), void this.open();
+          }
+
+          t.target.closest(".graph-modal__close") && this.close();
+        }.bind(this)), window.addEventListener("keydown", function (t) {
+          27 == t.keyCode && this.isOpen && this.close(), 9 == t.which && this.isOpen && this.focusCatch(t);
+        }.bind(this)), document.addEventListener("click", function (t) {
+          t.target.classList.contains("graph-modal") && t.target.classList.contains("is-open") && this.close();
+        }.bind(this)));
+      }
+    }, {
+      key: "open",
+      value: function open(t) {
+        var _this = this;
+
+        if (this.previousActiveElement = document.activeElement, this.isOpen) return this.reOpen = !0, void this.close();
+        this.modalContainer = this._nextContainer, t && (this.modalContainer = document.querySelector("[data-graph-target=\"".concat(t, "\"]"))), this.modal.style.setProperty("--transition-time", this.speed / 1e3 + "s"), this.modal.classList.add("is-open"), document.body.style.scrollBehavior = "auto", document.documentElement.style.scrollBehavior = "auto", this.disableScroll(), this.modalContainer.classList.add("graph-modal-open"), this.modalContainer.classList.add(this.animation), setTimeout(function () {
+          _this.options.isOpen(_this), _this.modalContainer.classList.add("animate-open"), _this.isOpen = !0, _this.focusTrap();
+        }, this.speed);
+      }
+    }, {
+      key: "close",
+      value: function close() {
+        this.modalContainer && (this.modalContainer.classList.remove("animate-open"), this.modalContainer.classList.remove(this.animation), this.modal.classList.remove("is-open"), this.modalContainer.classList.remove("graph-modal-open"), this.enableScroll(), document.body.style.scrollBehavior = "auto", document.documentElement.style.scrollBehavior = "auto", this.options.isClose(this), this.isOpen = !1, this.focusTrap(), this.reOpen && (this.reOpen = !1, this.open()));
+      }
+    }, {
+      key: "focusCatch",
+      value: function focusCatch(t) {
+        var e = this.modalContainer.querySelectorAll(this._focusElements),
+            o = Array.prototype.slice.call(e),
+            _n = o.indexOf(document.activeElement);
+
+        t.shiftKey && 0 === _n && (o[o.length - 1].focus(), t.preventDefault()), t.shiftKey || _n !== o.length - 1 || (o[0].focus(), t.preventDefault());
+      }
+    }, {
+      key: "focusTrap",
+      value: function focusTrap() {
+        var t = this.modalContainer.querySelectorAll(this._focusElements);
+        this.isOpen ? t.length && t[0].focus() : this.previousActiveElement.focus();
+      }
+    }, {
+      key: "disableScroll",
+      value: function disableScroll() {
+        var t = window.scrollY;
+        this.lockPadding(), document.body.classList.add("disable-scroll"), document.body.dataset.position = t, document.body.style.top = -t + "px";
+      }
+    }, {
+      key: "enableScroll",
+      value: function enableScroll() {
+        var t = parseInt(document.body.dataset.position, 10);
+        this.unlockPadding(), document.body.style.top = "auto", document.body.classList.remove("disable-scroll"), window.scroll({
+          top: t,
+          left: 0
+        }), document.body.removeAttribute("data-position");
+      }
+    }, {
+      key: "lockPadding",
+      value: function lockPadding() {
+        var t = window.innerWidth - document.body.offsetWidth + "px";
+        this._fixBlocks.forEach(function (e) {
+          e.style.paddingRight = t;
+        }), document.body.style.paddingRight = t;
+      }
+    }, {
+      key: "unlockPadding",
+      value: function unlockPadding() {
+        this._fixBlocks.forEach(function (t) {
+          t.style.paddingRight = "0px";
+        }), document.body.style.paddingRight = "0px";
+      }
+    }]);
+
+    return n;
+  }();
+}, function (t, e, o) {
+  "use strict";
+
+  o.r(e), function (t) {
+    var e = o(0);
+    o(3), o(4);
+    t.GraphModal = e.a;
+  }.call(this, o(2));
+}, function (t, e) {
+  var o;
+
+  o = function () {
+    return this;
+  }();
+
+  try {
+    o = o || new Function("return this")();
+  } catch (t) {
+    "object" == (typeof window === "undefined" ? "undefined" : _typeof(window)) && (o = window);
+  }
+
+  t.exports = o;
+}, function (t, e) {
+  "undefined" != typeof Element && (Element.prototype.matches || (Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector), Element.prototype.closest || (Element.prototype.closest = function (t) {
+    var e = this;
+
+    do {
+      if (e.matches(t)) return e;
+      e = e.parentElement || e.parentNode;
+    } while (null !== e && 1 === e.nodeType);
+
+    return null;
+  }));
+}, function (t, e, o) {}]);
+
+/***/ }),
+
+/***/ "./src/js/vendor/smooth-scroll.min.js":
+/*!********************************************!*\
+  !*** ./src/js/vendor/smooth-scroll.min.js ***!
+  \********************************************/
+/***/ (() => {
+
+
 
 /***/ })
 
