@@ -1,0 +1,174 @@
+.testimonials {
+  background-color: var(--color-athens);
+  padding-top: 97px;
+  margin-bottom: -63px;
+
+  @include tablet {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
+
+  @include small-tablet {
+    padding-top: 40px;
+  }
+
+  &--work {
+    padding-top: 81px;
+  }
+
+  &--work-inner {
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+    .testimonials__content {
+      order: 1;
+      padding-right: 76px;
+
+      @include mobile {
+        padding: 0;
+      }
+    }
+
+    .testimonials__title {
+      margin-bottom: 61px;
+
+      @include mobile {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .testimonials-work-inner__list {
+      max-width: 246px;
+
+      @include tablet {
+        max-width: none;
+      }
+
+      @include mobile {
+        width: 90%;
+      }
+    }
+
+    .testimonials__image {
+      order: -1;
+    }
+
+    @include tablet {
+      padding-bottom: 70px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      justify-content: start;
+    }
+  }
+
+  &__center {
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 612px;
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__items {
+    position: relative;
+    margin: auto !important;
+    padding: 0 0 10px 0 !important;
+  }
+
+  &__slider-nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__image {
+    position: relative;
+    border-radius: 4px;
+    z-index: 10;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+
+      @include minidesc {
+        max-width: none;
+        height: initial;
+        width: 340px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+.testimonials-item {
+  overflow: hidden;
+
+  &__image {
+    overflow: hidden;
+    border-radius: 100%;
+    margin-bottom: 25px;
+
+    img {
+      display: block;
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      margin: 20px auto;
+    }
+
+    @include mobile {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-gray);
+
+    margin-bottom: 25px;
+  }
+
+  &__author {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-ebony);
+
+    margin-bottom: 5px;
+
+    &-positions {
+      display: block;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+
+      color: var(--color-storm);
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.graph-modal__container {
+  width: 486px;
+  padding: 48px;
+  border-radius: 4px;
+
+  @include mobile {
+    width: 90%;
+  }
+}
+
+.graph-modal__close {
+  position: absolute;
+  right: 26px;
+  top: 26px;
+}
+
+.site-modal {
+  &__title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__btn {
+    margin-top: 21px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 14px 10px;
+  }
+
+  &__field {
+    width: 100%;
+
+    .choices {
+      width: 100%;
+    }
+    .choices__inner {
+      min-width: initial;
+      width: 100%;
+      border-color: #d7dadd;
+      background-color: #f4f5f7;
+    }
+
+    .choices__list--dropdown .choices__item--selectable::after,
+    .choices__list[aria-expanded] .choices__item--selectable::after {
+      display: none;
+    }
+
+    &--file {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    width: 390px;
+    height: 86px;
+  }
+
+  .form-field__input--file {
+    display: none;
+  }
+
+  &__flex {
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+      .site-modal__attach-text {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    fill: var(--color-primary);
+    margin-right: 12px;
+  }
+
+  &__attach-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-gray);
+
+    transition: color 0.3s ease-in-out;
+  }
+}

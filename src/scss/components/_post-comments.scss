@@ -1,0 +1,30 @@
+.comments {
+  &__wrapper {
+    max-width: 840px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    padding-top: 31px;
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    font-size: 46px;
+    line-height: 130%;
+    margin-bottom: 61px;
+
+    @include small-tablet {
+      font-size: 30px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 50px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+}

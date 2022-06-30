@@ -1,0 +1,87 @@
+.slider-nav {
+  @include flex-v-center;
+
+  position: relative;
+  z-index: 15;
+  user-select: none;
+
+  &__btn {
+    @include flex-all-center;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    color: var(--color-gray);
+
+    outline: none;
+    outline-color: rgba($color: #fff, $alpha: 0);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+      outline 0.3s ease-in-out;
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      color: inherit;
+      fill: currentColor;
+
+      object-fit: cover;
+      transition: fill 0.3s ease-in-out;
+
+      @include small-tablet {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &--work-images {
+      background-color: rgba($color: #fff, $alpha: 0.5);
+
+      &:focus {
+        outline-offset: 5px;
+        outline: 2px solid var(--color-primary);
+      }
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+
+    &:focus {
+      outline: 2px solid rgba($color: #ff5a30, $alpha: 1);
+    }
+
+    &:hover {
+      color: var(--color-light);
+      background-color: var(--color-primary);
+    }
+
+    &:active {
+      outline: none;
+    }
+
+    &--hero {
+      background-color: rgba($color: #fff, $alpha: 0.5);
+
+      &:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 5px;
+      }
+
+      &:hover {
+        background-color: rgba($color: #fff, $alpha: 1);
+        svg {
+          fill: var(--color-gray);
+        }
+      }
+    }
+
+    @include small-tablet {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.slider-nav__btn.swiper-button-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

@@ -1,0 +1,74 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+@import "vendor";
+
+@import "./components/slider-nav";
+@import "./components/form-field";
+
+// подключения компонентов страницы (Большие компоненты)
+// Page home
+@import "./components/header";
+@import "./components/hero";
+@import "./components/about-section";
+@import "./components/mission";
+@import "./components/services-section";
+@import "./components/projects-section";
+@import "./components/partners-section";
+@import "./components/testimonials-section";
+@import "./components/facts-section";
+@import "./components/recent-news";
+@import "./components/contacts-section";
+@import "./components/footer";
+
+// Page services
+@import "./components/page-hero";
+@import "./components/services-content";
+
+//Page services-v2
+@import "./components/we-offer";
+@import "./components/how-we-do";
+@import "./components/pricing";
+
+// Page work
+@import "./components/portfolio";
+
+// Page work-v2
+@import "./components/work-images";
+@import "./components/project-goal";
+@import "./components/testimonials-work-inner";
+
+// Page About
+@import "./components/achive";
+@import "./components/history";
+@import "./components/team";
+@import "./components/worldwide";
+
+// Page Positions
+@import "./components/positions-content";
+@import "./components/modals";
+
+// Page News
+@import "./components/categories";
+
+// Page Post
+@import "./components/single-post";
+@import "./components/post-comments";
+@import "./components/comment";
+@import "./components/comments-form";
+
+// Page Contacts
+@import "./components/contacts-form";
+@import "./components/contacts-info";
+@import "./components/find";
+
+// подключения компонентов страницы (Маленькие компоненты)
+@import "./components/nav";
+@import "./components/header-contacts";
+@import "./components/video-block";
+@import "./components/learn-more";
+@import "./components/social";
+@import "./components/breadcrumbs";
+@import "./components/to-top";

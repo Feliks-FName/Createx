@@ -1,0 +1,208 @@
+.pricing {
+  position: relative;
+  padding-top: 79px;
+  background-color: var(--color-athens);
+  padding-bottom: 120px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/services-v2/pricing-bg.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  &__descr {
+    margin-bottom: 61px;
+  }
+}
+
+.table-wrapper {
+  position: relative;
+  border: 1px solid #e5e8ed;
+  border-radius: 4px;
+  width: 100%;
+
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  background-color: var(--color-light);
+  z-index: 5;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__th {
+    padding-top: 36px;
+    padding-bottom: 23px;
+    padding-right: 18px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: var(--color-ebony);
+
+    &:first-child {
+      text-align: left;
+      vertical-align: bottom;
+      padding-left: 24px;
+
+      @include mobile {
+        padding-left: 5px;
+      }
+    }
+
+    &:last-child {
+      padding-left: 5px;
+    }
+
+    &-title {
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+
+      @include tablet {
+        font-size: 18px;
+      }
+
+      @include small-tablet {
+        font-size: 14px;
+      }
+
+      @include mobile {
+        font-size: 9px;
+      }
+    }
+
+    &-descr {
+      color: var(--color-storm);
+    }
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include small-tablet {
+      font-size: 12px;
+    }
+
+    @include mobile {
+      padding-right: 0;
+      font-size: 9px;
+    }
+  }
+
+  &__body {
+    .table__row {
+      height: 58px;
+
+      &:nth-child(odd) {
+        background-color: var(--color-athens);
+      }
+
+      &:last-child {
+        .table__col {
+          padding: 33px 0;
+        }
+      }
+    }
+  }
+
+  &__col {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-gray);
+
+    vertical-align: middle;
+    text-align: center;
+
+    &:first-child {
+      text-align: left;
+      padding-left: 24px;
+
+      @include mobile {
+        padding-left: 5px;
+      }
+    }
+
+    @include tablet {
+      font-size: 13px;
+    }
+
+    @include mobile {
+      font-size: 10px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-gray);
+
+    @include tablet {
+      font-size: 13px;
+    }
+
+    @include mobile {
+      font-size: 10px;
+    }
+  }
+
+  &__check {
+    font-size: 0;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+
+    background-image: url("../img/services-v2/mark-table.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include small-tablet {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__btn {
+    padding: 10px 23px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 10px;
+    }
+
+    @include small-tablet {
+      font-size: 9px;
+      padding: 10px 3px;
+    }
+
+    @include mobile {
+      line-height: 14px;
+      margin-right: 10px;
+    }
+  }
+}

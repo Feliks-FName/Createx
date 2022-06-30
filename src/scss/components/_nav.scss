@@ -1,0 +1,51 @@
+.nav {
+  &__list {
+    @include flex-v-center;
+
+    @include tablet {
+      margin-bottom: 40px;
+      display: block;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 40px;
+
+      @include tablet {
+        margin-right: 0;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-gray);
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      outline-offset: 5px;
+      outline: 2px solid var(--color-primary);
+    }
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:active {
+      color: var(--color-active);
+    }
+
+    &--current {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.menu--active {
+  left: 0%;
+}

@@ -1,0 +1,40 @@
+.breadcrumbs {
+  @include flex-v-center;
+  margin-bottom: 40px;
+
+  &__item {
+    position: relative;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-gray);
+
+    &:not(:last-child) {
+      margin-right: 21px;
+
+      &::after {
+        content: "/";
+        position: absolute;
+        top: 0;
+        right: -14px;
+
+        color: #9a9ca5;
+      }
+    }
+
+    @include small-tablet {
+      font-size: 11px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+
+    @include outline-primary-text;
+
+    &:not([href]) {
+      color: #9a9ca5;
+    }
+  }
+}

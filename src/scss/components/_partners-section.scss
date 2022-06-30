@@ -1,0 +1,82 @@
+.partners {
+  background-color: var(--color-athens);
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &--services {
+    padding-top: 0;
+    padding-bottom: 117px;
+  }
+
+  &--services-v2 {
+    padding-top: 0px;
+    padding-bottom: 117px;
+  }
+
+  &--work {
+    background-color: var(--color-light);
+    padding-top: 183px;
+    padding-bottom: 114px;
+
+    @include small-tablet {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
+  &--about {
+    padding-top: 120px;
+    background-color: var(--color-light);
+
+    @include tablet {
+      padding-top: 100px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 59px;
+
+    &--about {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 102px;
+
+    @include tablet {
+      justify-items: center;
+    }
+
+    @include mobile {
+      gap: 50px;
+    }
+
+    &--about {
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 37px;
+    }
+  }
+
+  &__item {
+    @include tablet {
+      grid-column: 2 span;
+    }
+
+    @include mobile {
+      grid-column: 3 span;
+    }
+  }
+
+  &__link {
+    outline-offset: 0px;
+    outline-color: transparent;
+    transition: outline-offset 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+    &:focus {
+      outline-offset: 5px;
+      outline-color: var(--color-manate);
+    }
+  }
+}

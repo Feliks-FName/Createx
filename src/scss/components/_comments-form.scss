@@ -1,0 +1,73 @@
+.comments-form {
+  max-width: 840px;
+  padding: 0 15px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 180px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 130%;
+    text-align: center;
+    color: var(--color-ebony);
+    margin-bottom: 48px;
+
+    @include small-tablet {
+      font-size: 30px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+
+  &__field {
+    width: 48.2%;
+
+    &--big {
+      width: 100%;
+    }
+
+    &--mb {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__caption {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-gray);
+  }
+
+  &__input {
+    height: 52px;
+    max-width: 390px;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 160%;
+
+      color: var(--color-manate);
+    }
+
+    &--big {
+      max-width: initial;
+      min-height: 100px;
+      resize: vertical;
+
+      padding-top: 13px;
+      padding-left: 14px;
+    }
+  }
+
+  @include small-tablet {
+    padding-bottom: 60px;
+  }
+}

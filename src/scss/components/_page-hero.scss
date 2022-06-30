@@ -1,0 +1,264 @@
+.page-hero {
+  padding-top: 153px;
+  background-color: var(--color-athens);
+
+  padding-bottom: 80px;
+  min-height: 600px;
+
+  background-position: right -10px top;
+  background-repeat: no-repeat;
+
+  &__title {
+    margin-bottom: 23px;
+
+    max-width: 600px;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 130%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: var(--color-ebony);
+
+    &--small {
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 120%;
+      letter-spacing: 1px;
+      text-transform: initial;
+    }
+
+    &--mb {
+      margin-bottom: 60px;
+    }
+
+    &--post {
+      max-width: initial;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 120%;
+      letter-spacing: 1px;
+      text-transform: initial;
+      color: var(--color-ebony);
+      margin-bottom: 48px;
+
+      @include minidesc {
+        font-size: 50px;
+      }
+
+      @include small-tablet {
+        font-size: 30px !important ;
+      }
+    }
+
+    @include tablet {
+      font-size: 50px;
+    }
+
+    @include mobile {
+      font-size: 35px;
+    }
+  }
+
+  &__descr {
+    max-width: 600px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: var(--color-storm);
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &--services {
+    background-image: url("../img/bg-image-services.png");
+  }
+
+  &--services-inner {
+    background-image: url("../img/services-v2/bg-hero-services-v2.png");
+  }
+
+  &--work {
+    background-image: url("../img/work/hero-work-bg.png");
+
+    @include minidesc {
+      background-position: 253px 0;
+    }
+
+    @include tablet {
+      background-position: 235px;
+    }
+
+    @include small-tablet {
+      background-position: 238px 0;
+    }
+
+    @include mobile {
+      background-position: 106px 0;
+    }
+  }
+
+  &--work-inner {
+    min-height: auto;
+    background-image: url("../img/work-v2/bg-hero-work-v2.png");
+    background-position: right -10px top 48px;
+    background-color: var(--color-light);
+    padding-bottom: 100px;
+
+    @include small-tablet {
+      padding-bottom: 50px;
+    }
+  }
+
+  &--about {
+    position: relative;
+    background-image: url("../img/about/about-hero-image-1.png");
+  }
+
+  &--positions {
+    background-image: url("../img/positions/hero-bg-positions.png");
+    background-position: right -10px bottom;
+
+    @include minidesc {
+      background-size: 750px;
+    }
+
+    @include tablet {
+      background-size: 580px;
+    }
+
+    @include small-tablet {
+      background-size: 660px;
+    }
+
+    @include mobile {
+      background-size: 360px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: -9px;
+    z-index: 2;
+
+    @include sosodesc {
+      top: initial;
+      bottom: 0;
+      width: 600px;
+    }
+
+    @include minidesc {
+      width: 500px;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &--news {
+    background-image: url("../img/news/hero-bg-news.png");
+
+    @include minidesc {
+      background-position: bottom right -90px;
+      background-size: cover;
+    }
+
+    @include tablet {
+      background-position: bottom right -340px;
+    }
+
+    @include small-tablet {
+      background-position: bottom right -400px;
+    }
+
+    @include mobile {
+      background-position: bottom right -440px;
+    }
+  }
+
+  &--contacts {
+    background-image: url("../img/contacts/hero-contacts-bg.png");
+
+    @include tablet {
+      background-position-x: 210px;
+    }
+
+    @include small-tablet {
+      background-position-y: 100px;
+    }
+
+    @include mobile {
+      background-position-x: left;
+      background-position-y: bottom;
+      background-size: 580px;
+    }
+  }
+
+  &--post {
+    @include small-tablet {
+      min-height: 440px;
+    }
+  }
+
+  @include mobile {
+    padding-top: 100px;
+  }
+}
+
+.hero-socials {
+  @include flex-v-center;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+  }
+
+  &__link {
+    color: var(--color-storm);
+    outline: 2px solid transparent;
+    transition: outline-offset 0.3s ease-in-out, outline 0.3s ease-in-out;
+
+    &:focus {
+      .hero-socials__icon {
+        outline-offset: 5px;
+        outline: 2px solid var(--color-primary);
+      }
+    }
+
+    &:hover {
+      .hero-socials__icon {
+        fill: var(--color-primary);
+      }
+    }
+
+    &:active {
+      .hero-socials__icon {
+        fill: var(--color-active);
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    fill: var(--color-storm);
+    transition: fill 0.3s ease-in-out;
+
+    @include mobile {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

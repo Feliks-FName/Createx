@@ -1,0 +1,237 @@
+.achive {
+  padding-top: 121px;
+  padding-bottom: 115px;
+
+  background-image: url("../img/about/achive-bg.png");
+  background-repeat: no-repeat;
+  background-position: bottom -526px right -11px;
+  background-color: var(--color-light);
+
+  &__list {
+    position: relative;
+    margin-bottom: 260px;
+
+    @include mobile {
+      margin-bottom: 100px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-row-gap: 70px;
+    }
+  }
+
+  &__item {
+    @include flex-collumn-centr;
+    grid-column: 3 span;
+    text-align: center;
+
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 70px;
+
+    &--recom {
+      background-image: url("../img/about/ic-like.svg");
+    }
+    &--renove {
+      background-image: url("../img/about/ic-painting.svg");
+    }
+    &--special {
+      background-image: url("../img/about/ic-helmet.svg");
+    }
+    &--finish {
+      background-image: url("../img/about/ic-pantone.svg");
+    }
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 130%;
+
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: var(--color-ebony);
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    @include tablet {
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    border-radius: 4px;
+    img {
+      max-width: initial;
+
+      @include mobile {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    @include tablet {
+      position: relative;
+      top: -100px;
+    }
+
+    @include mobile {
+      top: 0;
+      max-width: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    position: relative;
+    border-radius: 4px;
+    width: 735px;
+    // flex-shrink: 0;
+    top: -62px;
+    left: -31px;
+
+    background: var(--color-light);
+
+    box-shadow: var(--main-shadow);
+    z-index: 5;
+    padding: 20px 72px 56px 135px;
+
+    @include minidesc {
+      width: 495px;
+      padding: 20px 27px 56px 82px;
+    }
+
+    @include tablet {
+      width: 665px;
+      padding: 20px 20px 20px 40px;
+      position: absolute;
+      top: initial;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include small-tablet {
+      width: 560px;
+    }
+
+    @include mobile {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: none;
+    }
+  }
+
+  @include mobile {
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
+}
+
+.quote {
+  margin: 0;
+
+  &__content {
+    position: relative;
+    margin-bottom: 51px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -57px;
+      top: 1px;
+      width: 28px;
+      height: 20px;
+
+      background-image: url("../img/about/braces.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include tablet {
+        left: -34px;
+      }
+
+      @include mobile {
+        width: 20px;
+        height: 13px;
+      }
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: var(--color-ebony);
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      @include tablet {
+        font-size: 15px;
+      }
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__footer {
+    padding-top: 10px;
+    padding-bottom: 22px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: var(--color-storm);
+
+    background-image: url("../img/about/signature.svg");
+    background-position: right 34px center;
+    background-size: 100px 68px;
+    background-repeat: no-repeat;
+
+    @include mobile {
+      background-position: right 0px bottom -7px;
+      background-size: 68px 68px;
+    }
+  }
+
+  &__author {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    color: var(--color-ebony);
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,267 @@
+.mission {
+  background-color: var(--color-light);
+
+  &__center {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+  }
+
+  &__list {
+    --mission-gap: 94px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--mission-gap) * 2);
+
+    margin-bottom: 27px;
+
+    @include tablet {
+      --mission-gap: 50px;
+    }
+
+    @include small-tablet {
+      --mission-gap: 30px;
+    }
+
+    &--benefits {
+      padding-bottom: 126px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-top: 72px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 48px 48px;
+    text-align: center;
+
+    @include mobile {
+      grid-column: 3 span;
+
+      &:not(:last-child) {
+        margin-bottom: 60px;
+
+        @include small-tablet {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: calc(-1 * var(--mission-gap));
+        width: 1px;
+        height: 100%;
+
+        background-image: url("../img/divider.svg");
+
+        @include mobile {
+          content: none;
+        }
+      }
+    }
+
+    &--quality {
+      background-image: url("../img/quality.svg");
+    }
+
+    &--safety {
+      background-image: url("../img/safety.svg");
+    }
+
+    &--comfort {
+      background-image: url("../img/comfort.svg");
+    }
+
+    // For benefits section
+    &--fixes {
+      background-image: url("../img/services-v2/fixed.svg");
+    }
+
+    &--qualified {
+      background-image: url("../img/services-v2/qualifed.svg");
+    }
+
+    &--control {
+      background-image: url("../img/services-v2/control.svg");
+    }
+
+    &--training {
+      background-image: url("../img/positions/training.svg");
+    }
+    &--growth {
+      background-image: url("../img/positions/growth.svg");
+    }
+    &--salary {
+      background-image: url("../img/positions/salary.svg");
+    }
+
+    &--contacts {
+      padding-top: 0;
+      text-align: initial;
+      margin-bottom: 0;
+
+      .mission__subtitle {
+        text-align: left;
+        font-size: 28px;
+        margin-bottom: 25px;
+
+        @include tablet {
+          font-size: 21px;
+        }
+
+        @include small-tablet {
+          text-align: center;
+        }
+      }
+
+      @include small-tablet {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: var(--color-ebony);
+
+    margin-bottom: 10px;
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-storm);
+  }
+
+  &--benefits {
+    position: relative;
+    background-color: var(--color-ebony);
+    padding-top: 81px;
+
+    .title {
+      color: var(--color-light);
+    }
+
+    .mission__subtitle {
+      color: var(--color-light);
+    }
+  }
+
+  &--about {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: var(--color-athens);
+
+    .mission__list {
+      margin: 0;
+    }
+  }
+
+  &--positions {
+    padding-top: 130px;
+    padding-bottom: 152px;
+
+    @include tablet {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+  }
+}
+
+.know-form {
+  position: relative;
+  top: 92px;
+  border-radius: 4px;
+  padding: 48px 60px;
+  background: var(--color-light);
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+
+  @include small-tablet {
+    top: 0;
+  }
+
+  @include mobile {
+    padding: 0;
+    padding-top: 30px;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    margin-bottom: 32px;
+    color: var(--color-ebony);
+
+    @include small-tablet {
+      font-size: 23px;
+    }
+
+    @include mobile {
+      font-size: 17px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-end;
+
+    @include tablet {
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      & > * {
+        margin-right: 0 !important;
+        margin-bottom: 20px;
+        width: 49%;
+        flex-grow: initial;
+
+        .form-field__input {
+          width: 100%;
+        }
+      }
+    }
+
+    @include mobile {
+      padding: 15px;
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+
+  &__field {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+
+  &__btn {
+    padding: 11px 29px;
+
+    &--benefits {
+      padding: 14px 112px;
+
+      @include mobile {
+        padding: 14px 70px;
+      }
+    }
+  }
+}

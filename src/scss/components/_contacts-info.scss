@@ -1,0 +1,81 @@
+.contacts-info {
+  padding-top: 81px;
+  padding-bottom: 50px;
+  background-color: var(--color-athens);
+}
+
+.mission-contacts {
+  --mission-gap: 119px;
+  &__item {
+    &:nth-child(2) {
+      margin-bottom: 6px;
+    }
+  }
+  &__adres {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: var(--color-ebony);
+    max-width: 250px;
+    margin-bottom: 5px;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-decoration-line: underline;
+    color: var(--color-primary);
+    margin-bottom: 23px;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: var(--color-storm);
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  &__text2 {
+    color: var(--color-ebony);
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  &__data {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: var(--color-ebony);
+    text-decoration: underline;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  @include sosodesc {
+    --mission-gap: 90px;
+    justify-items: center;
+  }
+
+  @include minidesc {
+    --mission-gap: 40px;
+  }
+}

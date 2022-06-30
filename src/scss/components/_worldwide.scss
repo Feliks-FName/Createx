@@ -1,0 +1,71 @@
+.worldwide {
+  padding-top: 80px;
+  background-color: var(--color-athens);
+  padding-bottom: 116px;
+
+  &__title {
+    margin-bottom: 59px;
+  }
+
+  @include tablet {
+    display: none;
+    padding-bottom: 30px;
+  }
+}
+
+.worldwide-map {
+  display: flex;
+  position: relative;
+
+  &__pop-up {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    max-width: 300px;
+    width: fit-content;
+    margin: 0 auto;
+    height: 50px;
+    padding: 15px;
+
+    box-shadow: var(--main-shadow);
+
+    font-size: 18px;
+    color: var(--color-ebony);
+    background-color: var(--color-light);
+    z-index: 100;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  @include small-tablet {
+    max-height: 400px;
+  }
+}
+.country {
+  pointer-events: all;
+  fill: rgba($color: #b3b7bc, $alpha: 1);
+  stroke: transparent;
+  stroke-width: 0px;
+  transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out,
+    stroke-width 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    fill: rgba($color: #ff5a30, $alpha: 0.3);
+    stroke: var(--color-primary);
+    stroke-width: 3px;
+  }
+
+  &__canada {
+    &--active {
+      stroke: var(--color-primary);
+      stroke-width: 3px;
+    }
+  }
+}

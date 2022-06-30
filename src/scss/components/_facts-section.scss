@@ -1,0 +1,128 @@
+.facts {
+  overflow: hidden;
+  padding-top: 181px;
+  background-color: var(--color-light);
+  position: relative;
+  padding-bottom: 180px;
+
+  @include small-tablet {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+
+    width: 570px;
+    height: 1065px;
+
+    background-image: url("../img/bg-image-section-facts.png");
+    background-position: center;
+    // background-size: cover;
+    background-repeat: no-repeat;
+
+    @include small-tablet {
+      background-image: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    gap: 48px;
+    max-width: 736px;
+
+    @include small-tablet {
+      grid-template-columns: repeat((2, 1fr));
+      justify-items: center;
+    }
+  }
+}
+
+.facts-element {
+  &__circle {
+    --progress-stroke: #000;
+    --progress-bg-opacity: 0.3;
+
+    width: 148px;
+    height: 148px;
+    position: relative;
+
+    margin-bottom: 20px;
+
+    svg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .progress {
+      stroke: var(--progress-stroke);
+      transform: rotate(-90deg) translateX(20px);
+      transform-origin: center;
+    }
+
+    .progress-bg {
+      stroke: var(--progress-stroke);
+      opacity: (var(--progress-bg-opacity));
+    }
+
+    @include mobile {
+      width: 120px;
+      height: 120px;
+      margin: 0px auto 20px;
+    }
+  }
+
+  &--one-color {
+    --progress-stroke: #f89828;
+  }
+
+  &--two-color {
+    --progress-stroke: #f52f6e;
+  }
+
+  &--three-color {
+    --progress-stroke: #5a87fc;
+  }
+
+  &--four-color {
+    --progress-stroke: #03cea4;
+  }
+
+  &__value {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+
+    color: var(--color-ebony);
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--color-ebony);
+  }
+}

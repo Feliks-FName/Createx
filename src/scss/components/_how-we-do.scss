@@ -1,0 +1,111 @@
+.how-we-do {
+  padding-bottom: 120px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 130%;
+
+    margin-bottom: 59px;
+
+    @include tablet {
+      font-size: 40px;
+    }
+
+    @include small-tablet {
+      font-size: 35px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    @include minidesc {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+
+  &__item {
+    max-width: 285px;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+
+      @include minidesc {
+        margin-right: 0;
+      }
+    }
+
+    @include minidesc {
+      max-width: none;
+      width: 45%;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__number {
+    display: block;
+    position: relative;
+
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 130%;
+    color: #d7dadd;
+
+    margin-bottom: 19px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 27px;
+      right: 0;
+      max-width: 209px;
+      width: 100%;
+      border-bottom-style: dashed;
+      border-width: 2px;
+      border-color: currentColor;
+
+      @include minidesc {
+        max-width: none;
+        width: 85%;
+      }
+
+      @include tablet {
+        width: 80%;
+      }
+    }
+
+    @include small-tablet {
+      font-size: 40px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    margin-bottom: 10px;
+
+    @include small-tablet {
+      font-size: 18px;
+    }
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-storm);
+
+    @include small-tablet {
+      font-size: 14px;
+    }
+  }
+}

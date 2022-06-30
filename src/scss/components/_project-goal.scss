@@ -1,0 +1,108 @@
+.project-goal {
+  padding-top: 35px;
+  background-color: var(--color-light);
+  padding-bottom: 81px;
+
+  &__container {
+    @include flex-v-center;
+    align-items: start;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__right {
+    position: relative;
+    max-width: 495px;
+    max-height: 316px;
+    border-radius: 4px;
+
+    @include flex-v-center;
+    align-items: start;
+
+    top: -40px;
+
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+      0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+      0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+      0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+    padding-right: 66px;
+    padding-top: 40px;
+    padding-bottom: 38px;
+    padding-left: 57px;
+
+    @include mobile {
+      max-width: 100%;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 39px;
+  }
+
+  &__descr {
+    max-width: 600px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: var(--color-gray);
+
+    &:not(:last-child) {
+      margin-bottom: 27px;
+    }
+
+    @include tablet {
+      max-width: none;
+    }
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__list-left {
+    margin-right: 34px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 16.5px;
+    }
+  }
+  &__head {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    text-transform: uppercase;
+
+    color: var(--color-ebony);
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__value {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-storm);
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  @include mobile {
+    padding-bottom: 40px;
+  }
+}

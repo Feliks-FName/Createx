@@ -1,0 +1,32 @@
+.find {
+  padding-top: 44px;
+  padding-bottom: 120px;
+  background-color: var(--color-athens);
+
+  &__title {
+    margin-bottom: 39px;
+  }
+
+  &__social {
+    justify-content: center;
+
+    .social__item {
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  .social__link {
+    width: 32px;
+    height: 32px;
+
+    .social__icon {
+      fill: var(--color-storm);
+
+      &:hover {
+        fill: var(--color-primary);
+      }
+    }
+  }
+}

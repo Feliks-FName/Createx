@@ -1,0 +1,221 @@
+.swiper {
+  margin: -100px !important;
+  padding: 100px !important;
+}
+
+.projects-section {
+  padding-bottom: 120px;
+  background-color: var(--color-light);
+  overflow: hidden;
+
+  @include small-tablet {
+    padding-bottom: 40px;
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 48px;
+  }
+
+  &__learn {
+    margin-top: 80px;
+  }
+
+  &__title {
+    margin: 0;
+    max-width: 705px;
+
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 130%;
+
+    color: var(--color-ebony);
+    padding-bottom: 11px;
+
+    @include tablet {
+      font-size: 35px;
+    }
+
+    @include small-tablet {
+      font-size: 25px;
+    }
+    @include mobile {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__slider-nav {
+    transform: translateX(12px);
+
+    @include mobile {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+  }
+
+  &__items {
+    margin: -100px;
+    padding: 100px;
+
+    .swiper-slide {
+      opacity: 0;
+      visibility: hidden;
+
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .slide-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // For servisec-v2 section
+
+  &--services {
+    padding-top: 154px;
+    padding-bottom: 99px;
+
+    @include tablet {
+      padding-top: 100px;
+    }
+  }
+
+  // For work-v2 section
+
+  &--work-inner {
+    padding-top: 184px;
+
+    @include tablet {
+      padding-top: 100px;
+    }
+
+    @include mobile {
+      padding-top: 70px;
+    }
+  }
+}
+
+.projects-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  height: 440px;
+  overflow: hidden;
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  background-color: var(--color-light);
+  // padding-bottom: 24px;
+
+  outline-offset: 0px;
+  outline-color: transparent;
+  transition: outline-offset 0.3s ease-in-out, outline-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 16px;
+
+    will-change: height;
+    transition: height 0.3s ease-in-out;
+
+    @include tablet {
+      height: 63%;
+    }
+  }
+
+  &__content {
+    @include flex-collumn-centr;
+
+    @include tablet {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: var(--color-ebony);
+
+    margin-bottom: 4px;
+
+    @include small-tablet {
+      font-size: 14px;
+    }
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: var(--color-storm);
+
+    @include small-tablet {
+      font-size: 12px;
+    }
+  }
+
+  &__btn {
+    margin-top: 24px;
+    opacity: 0;
+    visibility: hidden;
+    padding: 11.1px 31.2px;
+
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
+      background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+      outline-offset 0.3s ease-in-out, outline 0.3s ease-in-out;
+
+    &:focus {
+      outline-offset: 5px;
+      outline: 2px solid var(--color-primary);
+    }
+
+    @include tablet {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include small-tablet {
+      font-size: 12px;
+      padding: 6.1px 31.2px;
+    }
+  }
+
+  &:focus {
+    outline-offset: 5px;
+    outline: 2px solid var(--color-primary);
+  }
+
+  &:hover {
+    .projects-item__image {
+      height: 63%;
+    }
+
+    .projects-item__btn {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

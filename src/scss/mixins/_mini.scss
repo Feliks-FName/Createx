@@ -1,0 +1,118 @@
+/* stylelint-disable */
+
+@mixin bg-cover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-v-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-h-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-all-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-all-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-collumn-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin flex-collumn-centr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+$browser-context: 16; // Default
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+@mixin image-set($pathToImage) {
+  background-image: url("#{$pathToImage}.jpg");
+  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+  background-image: image-set(
+    /* stylelint-disable-next-line function-comma-newline-after */
+      "#{$pathToImage}.avif"type("image/avif"),
+    "#{$pathToImage}.webp"type("image/webp"),
+    "#{$pathToImage}.jpg"type("image/jpg")
+  );
+}
+
+@mixin footerToBottom {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+@mixin mr($value) {
+  &:not(:last-child) {
+    margin-right: $value;
+  }
+}
+
+@mixin ml($value) {
+  &:not(:last-child) {
+    margin-left: $value;
+  }
+}
+
+@mixin mb($value) {
+  &:not(:last-child) {
+    margin-bottom: $value;
+  }
+}
+
+@mixin mt($value) {
+  &:not(:last-child) {
+    margin-top: $value;
+  }
+}
+
+@mixin pseudo() {
+  content: "";
+  display: block;
+}
+
+@mixin outline-primary-text {
+  outline-offset: 0px;
+  outline-color: transparent;
+  transition: outline-offset 0.3s ease-in-out, outline-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+
+  &:focus {
+    outline-offset: 5px;
+    outline-color: var(--color-primary);
+  }
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &:active {
+    color: var(--color-active);
+  }
+}

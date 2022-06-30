@@ -1,0 +1,379 @@
+.footer {
+  padding-top: 78px;
+  background-color: var(--color-ebony);
+  color: var(--color-light);
+  padding-bottom: 73px;
+
+  @include small-tablet {
+    padding-bottom: 30px;
+  }
+
+  @include mobile {
+    padding-top: 60px;
+  }
+
+  &__container {
+    position: relative;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 29px;
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+  }
+
+  &__left {
+    grid-column: 7 span;
+    max-width: 493px;
+
+    @include small-tablet {
+      grid-column: 12 span;
+      max-width: none;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__top {
+    @include flex-v-center;
+    align-items: flex-start;
+    margin-bottom: 21px;
+
+    @include small-tablet {
+      justify-content: space-between;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    grid-column: 5 span;
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__address {
+    grid-column: 4 span;
+
+    @include mobile {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__nav {
+    grid-column: 8 span;
+
+    @include mobile {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__copyright {
+    grid-column: 12 span;
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__logo {
+    margin-right: 59px;
+    line-height: 0;
+
+    @include mobile {
+      max-width: 100px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-light);
+    opacity: 0.6;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+}
+
+.footer-form {
+  margin-bottom: 21px;
+
+  &__suptitle {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: var(--color-light);
+    margin-bottom: 24px;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__items {
+    @include flex-v-center;
+    margin-bottom: 16px;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  .form-field {
+    margin: 0;
+    width: 364px;
+  }
+
+  .form-field__input {
+    border-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 44px;
+
+    background-color: rgba(255, 255, 255, 0.12);
+
+    color: var(--color-light);
+    opacity: 0.6;
+  }
+
+  &__btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 11.7px 21px;
+    height: 44px;
+    letter-spacing: normal;
+  }
+
+  &__descr {
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-light);
+    opacity: 0.6;
+  }
+}
+
+.footer-address {
+  @include flex-collumn-start;
+
+  &__item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: rgba(255, 255, 255, 0.6);
+    outline: none;
+
+    @include small-tablet {
+      font-size: 13px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__name {
+    color: var(--color-light);
+    outline: none;
+  }
+
+  &__link {
+    color: inherit;
+    outline: 2px solid transparent;
+
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 0px;
+    }
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:active {
+      outline: none;
+      color: var(--color-active);
+    }
+  }
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-light);
+
+  margin-bottom: 13px;
+}
+
+.footer-nav {
+  display: flex;
+  padding-left: 54px;
+
+  @include small-tablet {
+    justify-content: space-evenly;
+    padding-left: 10px;
+  }
+
+  @include mobile {
+    justify-content: start;
+    padding-left: 0;
+    padding-bottom: 60px;
+  }
+
+  &__col {
+    &:not(:last-child) {
+      margin-right: 125px;
+
+      @include small-tablet {
+        margin-right: 54px;
+      }
+    }
+  }
+
+  &__item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    @include small-tablet {
+      font-size: 14px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: inherit;
+      outline: 2px solid transparent;
+      transition: all 0.3s ease-in-out;
+
+      &:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 5px;
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+
+      &:active {
+        outline: none;
+        color: var(--color-active);
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  margin-top: -25px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+
+  color: var(--color-light);
+
+  @include small-tablet {
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  @include mobile {
+    padding-top: 0;
+    font-size: 9px;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding-left: 24px;
+
+    color: inherit;
+    font-size: inherit;
+    outline-offset: 0px;
+    outline-color: transparent;
+    outline: 2px solid transparent;
+
+    transition: color 0.3s ease-in-out, outline-offset 0.3s ease-in-out,
+      outline-color 0.3s ease-in-out;
+
+    @include small-tablet {
+      color: var(--color-primary);
+    }
+
+    @include mobile {
+      padding-left: 18px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 0;
+      left: 2px;
+
+      background-image: url("../img/footer-heart.svg");
+
+      @include mobile {
+        width: 10px;
+        height: 10px;
+        left: 3px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-size: 10px 10px;
+      }
+    }
+
+    &:focus {
+      outline-offset: 1px;
+      outline: 2px solid var(--color-primary);
+    }
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:active {
+      color: var(--color-active);
+    }
+  }
+}

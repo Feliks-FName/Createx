@@ -1,0 +1,45 @@
+.social {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    outline-offset: 0px;
+    outline-color: transparent;
+    transition: outline-offset 0.3s ease-in-out, outline-color 0.3s ease-in-out,
+      fill 0.3s ease-in-out;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      fill: var(--color-light);
+      opacity: 0.6;
+      transition: opacity 0.3s ease-in-out, fill 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline-offset: 5px;
+      outline-color: rgba($color: #ff5a30, $alpha: 0.6);
+    }
+
+    &:hover {
+      outline: none;
+      svg {
+        opacity: 1;
+        fill: var(--color-primary);
+      }
+    }
+  }
+}

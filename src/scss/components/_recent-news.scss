@@ -1,0 +1,278 @@
+.recent-news {
+  background-color: var(--color-light);
+  padding-bottom: 117px;
+
+  @include small-tablet {
+    padding-bottom: 80px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 130%;
+
+    color: var(--color-ebony);
+    margin-bottom: 62px;
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__list {
+    grid-template-rows: repeat(2, 255px);
+    margin-bottom: 79px;
+
+    @include tablet {
+      grid-template-rows: initial;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    grid-column: 5 span;
+    @include tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+
+    &:first-child {
+      grid-column: 7 span;
+      grid-row: 2 span;
+
+      @include tablet {
+        grid-column: 12 span;
+        grid-row: 1;
+      }
+
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+  }
+}
+
+.recent-article {
+  overflow: hidden;
+  border-radius: 4px;
+  height: 100%;
+
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+
+  background-color: var(--color-light);
+
+  &--small {
+    .recent-article__descr {
+      display: none;
+    }
+  }
+
+  &__image {
+    border-radius: 4px 4px 0px 0px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    padding: 25px 23px;
+
+    &-small {
+      padding: 18px 24px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--color-ebony);
+
+    outline-offset: 0px;
+    outline-color: transparent;
+    transition: outline-offset 0.3s ease-in-out, outline-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    &--small {
+      @include minidesc {
+        font-size: 18px;
+      }
+
+      @include tablet {
+        font-size: 20px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    &:focus {
+      outline-offset: 5px;
+      outline-color: var(--color-primary);
+    }
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:active {
+      color: var(--color-active);
+    }
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    color: var(--color-gray);
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+.article-meta {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  color: var(--color-storm);
+
+  margin-bottom: 16px;
+
+  @include minidesc {
+    font-size: 12px;
+  }
+
+  @include tablet {
+    font-size: inherit;
+  }
+
+  @include mobile {
+    font-size: 10px;
+  }
+
+  // for post page
+  &--post {
+    display: flex;
+    font-size: 16px;
+    line-height: 160%;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .article-meta__teg--active {
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .article-meta__time {
+      background-image: url("../img/post/clock-post.svg");
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: left center;
+      padding-left: 28px;
+
+      @include mobile {
+        background-size: 10px 10px;
+        padding-left: 14px;
+      }
+    }
+
+    .article-meta--icon {
+      background-size: 20px 20px;
+
+      @include mobile {
+        background-size: 10px 10px;
+      }
+    }
+    @include mobile {
+      align-items: center;
+      font-size: 8px;
+    }
+  }
+
+  a {
+    color: inherit;
+    @include outline-primary-text;
+  }
+
+  &__time {
+    position: relative;
+    margin-left: 21px;
+    margin-right: 9px;
+
+    @include mobile {
+      margin-left: 12px;
+      margin-right: 6px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 12px;
+      bottom: 1px;
+      right: -12px;
+      background-color: var(--color-storm);
+
+      @include mobile {
+        right: -8px;
+        bottom: -1px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 12px;
+      bottom: 1px;
+      left: -12px;
+      background-color: var(--color-storm);
+
+      @include mobile {
+        left: -8px;
+        bottom: -1px;
+      }
+    }
+  }
+
+  &__comments {
+    padding-left: 37px;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: 13px 0;
+    background-image: url("../img/comments-icon.svg");
+
+    @include mobile {
+      padding-left: 26px;
+      padding-bottom: 2px;
+      background-size: 12px 12px;
+      background-position: 7px 0;
+    }
+  }
+}
